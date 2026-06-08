@@ -300,9 +300,14 @@ export default function App() {
           <p className="text-xs text-neutral-400 font-sans leading-relaxed max-w-md mx-auto">
             Un proyecto premium diseñado para seguir de cerca el torneo más grande de la historia en Norteamérica. Guía informativa no oficial.
           </p>
-          <div className="flex items-center justify-center gap-1.5 text-[10px] text-neutral-400 font-sans tracking-wide">
-            <Globe className="h-3 w-3 text-neutral-400 shrink-0" />
-            <span>Todos los horarios de eventos están mostrados en UTC-3.</span>
+          <div className="flex flex-col items-center justify-center gap-2 text-[10px] text-neutral-400 font-sans tracking-wide pt-4 border-t border-neutral-100 max-w-xs mx-auto">
+            <div className="flex items-center gap-1.5">
+              <Globe className="h-3 w-3 text-neutral-400 shrink-0" />
+              <span>Todos los horarios de eventos están mostrados en UTC-3.</span>
+            </div>
+            <p className="font-medium mt-1">
+              © 2026. Todos los derechos reservados a <span className="text-neutral-500">Yagui, Mosimosi y El Tatu</span>.
+            </p>
           </div>
         </div>
       </footer>
