@@ -1,0 +1,8 @@
+{
+  "name": "Copa del Mundo 2026 Companion",
+  "description": "World Cup 2026 Companion with interactive brackets, fixtures, teams roster, venues, and search.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
