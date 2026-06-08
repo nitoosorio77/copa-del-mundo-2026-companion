@@ -81,11 +81,11 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
         <div className="relative flex flex-col md:flex-row items-center md:items-start justify-between gap-6 sm:gap-10">
           
           {/* Official logo of world cup 2026 */}
-          <div className="flex-shrink-0 w-24 sm:w-32 h-36 sm:h-[172px] bg-neutral-950 rounded-2xl p-2 select-none shadow-lg shadow-neutral-950/20 border border-neutral-900 transition-transform duration-200 hover:scale-105 flex items-center justify-center">
+          <div className="flex-shrink-0 w-24 sm:w-32 h-36 sm:h-[172px] bg-neutral-950 rounded-2xl p-0.5 select-none shadow-lg shadow-neutral-950/20 border border-neutral-900 transition-transform duration-200 hover:scale-105 flex items-center justify-center overflow-hidden">
             <img
               src={fifaLogo}
               alt="Copa del Mundo 2026 Logo"
-              className="w-full h-full object-contain rounded-xl"
+              className="w-[95%] h-[95%] object-cover rounded-xl"
               referrerPolicy="no-referrer"
             />
           </div>
