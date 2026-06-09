@@ -217,7 +217,7 @@ export function parseAllData() {
 
   // --- 3. PARSE MATCHES ---
   const matches: Match[] = [];
-  const matchSectionRegex = /### ([^ \n]+ \d+ [^ \n]+ \d+)([\s\S]*?)(###|$)/gi;
+  const matchSectionRegex = /### ([^ \n]+ \d+ [^ \n]+ \d+)([\s\S]*?)(?=###|$)/gi;
   let matchSec;
   while ((matchSec = matchSectionRegex.exec(RAW_MATCHES)) !== null) {
     const rawDateText = matchSec[1].trim();

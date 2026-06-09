@@ -38,7 +38,11 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
       }
       datesMap[m.date].count++;
     });
-    return Object.values(datesMap);
+    return Object.values(datesMap).sort((a, b) => {
+      const [d1, m1, y1] = a.date.split("/").map(Number);
+      const [d2, m2, y2] = b.date.split("/").map(Number);
+      return new Date(y1, m1 - 1, d1).getTime() - new Date(y2, m2 - 1, d2).getTime();
+    });
   }, [matches, selectedPhase]);
 
   // Selected date state (defaults to the first date in the ribbon list or "all")
