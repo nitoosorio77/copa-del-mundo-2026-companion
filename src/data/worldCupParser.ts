@@ -217,13 +217,14 @@ export function parseAllData() {
 
   // --- 3. PARSE MATCHES ---
   const matches: Match[] = [];
-  const matchSectionRegex = /### ([^ \n]+ \d+ [^ \n]+ \d+)([\s\S]*?)(?=###|$)/gi;
-  let matchSec;
-  while ((matchSec = matchSectionRegex.exec(RAW_MATCHES)) !== null) {
-    const rawDateText = matchSec[1].trim();
-    const content = matchSec[2];
+  const dateBlocks = RAW_MATCHES.split("### ");
+  dateBlocks.forEach(block => {
+    if (!block.trim() || block.startsWith("#")) return;
+
+    const lines = block.split("\n");
+    const rawDateText = lines[0].trim();
     const dateParts = rawDateText.split(" ");
-    if (dateParts.length < 3) continue;
+    if (dateParts.length < 3) return;
     
     // Format to dd/mm/yyyy
     const dayVal = (dateParts[1] || "01").padStart(2, "0");
@@ -232,8 +233,7 @@ export function parseAllData() {
     const yearVal = dateParts[3] || "2026";
     const formattedDate = `${dayVal}/${monthVal}/${yearVal}`;
 
-    const matchLines = content.split("\n");
-    matchLines.forEach(line => {
+    lines.forEach(line => {
       const cleanLine = line.trim();
       if (!cleanLine.startsWith("- **partido:** ")) return;
 
@@ -266,7 +266,7 @@ export function parseAllData() {
         phase: (group.length === 1 && "ABCDEFGHIJKL".includes(group)) ? "grupo" : "eliminatoria"
       });
     });
-  }
+  });
 
   // Update assignedMatches dynamic tally in venues
   venues.forEach(venue => {
