@@ -8,6 +8,7 @@ import { Users, CheckCircle, TrendingUp, Info, Activity, ArrowRight, Shield } fr
 import { Group, Team, Match, AppState } from "../types";
 import { Flag } from "./Flag";
 import { MatchCalendarMenu } from "./MatchCalendarMenu";
+import { calculateStandings } from "../utils/standings";
 
 interface GroupDetailProps {
   groups: Group[];
@@ -40,70 +41,10 @@ export function GroupDetail({
     return teams.filter(t => t.group === activeGroupId);
   }, [teams, activeGroupId]);
 
-  // We can calculate deterministic high-fidelity group standouts (simulate games played and points)
-  // based on team stats (e.g. championships, historical weight, alphabetical sort)
+  // Calculate real standings based on match results
   const standoutsTable = useMemo(() => {
-    // Proportional standing weights
-    const getWeights = (teamId: string) => {
-      const t = teams.find(team => team.id === teamId);
-      if (!t) return { pts: 0, gf: 2, gc: 5 };
-      let pts = 0;
-      let gf = 0;
-      let gc = 0;
-
-      if (t.id === "ARG") { pts = 9; gf = 8; gc = 1; }
-      else if (t.id === "MEX") { pts = 7; gf = 5; gc = 2; }
-      else if (t.id === "BRA") { pts = 7; gf = 6; gc = 1; }
-      else if (t.id === "USA") { pts = 5; gf = 4; gc = 3; }
-      else if (t.id === "ALE") { pts = 6; gf = 5; gc = 3; }
-      else if (t.id === "ESP") { pts = 7; gf = 7; gc = 2; }
-      else if (t.id === "ING") { pts = 9; gf = 6; gc = 1; }
-      else if (t.id === "FRA") { pts = 7; gf = 5; gc = 2; }
-      else if (t.id === "POR") { pts = 7; gf = 6; gc = 3; }
-      else if (t.id === "HOL") { pts = 6; gf = 4; gc = 3; }
-      else if (t.id === "BEL") { pts = 6; gf = 5; gc = 2; }
-      else if (t.id === "COL") { pts = 4; gf = 4; gc = 4; }
-      else if (t.id === "URU") { pts = 4; gf = 3; gc = 3; }
-      else if (t.id === "SUI") { pts = 4; gf = 3; gc = 4; }
-      else if (t.id === "ECU") { pts = 4; gf = 3; gc = 3; }
-      // Generic formula based on ID weight
-      else {
-        const sum = teamId.charCodeAt(0) + teamId.charCodeAt(1);
-        pts = sum % 2 === 0 ? (sum % 3 === 0 ? 4 : 1) : 0;
-        gf = (sum % 4) + 1;
-        gc = (sum % 5) + 3;
-      }
-      return { pts, gf, gc };
-    };
-
-    const records = activeTeams.map(t => {
-      const stats = getWeights(t.id);
-      let pg = 3; // simulated games played
-      let pe = stats.pts % 3 === 1 ? 1 : (stats.pts === 5 ? 2 : 0);
-      let pg_won = Math.floor(stats.pts / 3);
-      let pp = pg - pg_won - pe;
-      if (stats.pts === 0) { pg_won = 0; pe = 0; pp = 3; }
-
-      return {
-        ...t,
-        played: pg,
-        points: stats.pts,
-        won: pg_won,
-        drawn: pe,
-        lost: pp,
-        gf: stats.gf,
-        gc: stats.gc,
-        gd: stats.gf - stats.gc
-      };
-    });
-
-    // Sort by points desc, goal difference desc, goals for desc
-    return records.sort((a, b) => {
-      if (b.points !== a.points) return b.points - a.points;
-      if (b.gd !== a.gd) return b.gd - a.gd;
-      return b.gf - a.gf;
-    });
-  }, [activeTeams, teams]);
+    return calculateStandings(activeTeams, matches.filter(m => m.group === activeGroupId));
+  }, [activeTeams, matches, activeGroupId]);
 
   // List of group stage matches of the active group
   const groupStageMatches = useMemo(() => {

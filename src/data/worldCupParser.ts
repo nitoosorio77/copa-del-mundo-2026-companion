@@ -235,36 +235,102 @@ export function parseAllData() {
 
     lines.forEach(line => {
       const cleanLine = line.trim();
-      if (!cleanLine.startsWith("- **partido:** ")) return;
+      if (cleanLine.startsWith("- **partido:** ")) {
+        const payload = cleanLine.replace("- **partido:** ", "").trim();
+        const parts = payload.split("|").map(s => s.trim());
+        if (parts.length < 7) return;
 
-      const payload = cleanLine.replace("- **partido:** ", "").trim();
-      const parts = payload.split("|").map(s => s.trim());
-      if (parts.length < 7) return;
+        const id = parseInt(parts[0]);
+        const time = parts[1];
+        const localId = parts[2];
+        const visitorId = parts[3];
+        const group = parts[4];
+        const venueId = parts[5];
+        const tvParts = parts[6].split(",").map(s => s.trim());
 
-      const id = parseInt(parts[0]);
-      const time = parts[1];
-      const localId = parts[2];
-      const visitorId = parts[3];
-      const group = parts[4];
-      const venueId = parts[5];
-      const tvParts = parts[6].split(",").map(s => s.trim());
+        const matchedVenue = venues.find(v => v.id === venueId);
+        const venueName = matchedVenue ? matchedVenue.name : venueId;
 
-      const matchedVenue = venues.find(v => v.id === venueId);
-      const venueName = matchedVenue ? matchedVenue.name : venueId;
+        matches.push({
+          id,
+          date: formattedDate,
+          rawDate: formattedDate,
+          time,
+          localId,
+          visitorId,
+          group,
+          venueId,
+          venueName,
+          tv: tvParts,
+          phase: (group.length === 1 && "ABCDEFGHIJKL".includes(group)) ? "grupo" : "eliminatoria"
+        });
+      } else if (cleanLine.startsWith("- **resultado:** ")) {
+        const payload = cleanLine.replace("- **resultado:** ", "").trim();
+        const parts = payload.split("|").map(s => s.trim());
+        if (parts.length < 2) return;
 
-      matches.push({
-        id,
-        date: formattedDate,
-        rawDate: formattedDate,
-        time,
-        localId,
-        visitorId,
-        group,
-        venueId,
-        venueName,
-        tv: tvParts,
-        phase: (group.length === 1 && "ABCDEFGHIJKL".includes(group)) ? "grupo" : "eliminatoria"
-      });
+        const matchId = parseInt(parts[0]);
+        const scoreParts = parts[1].split("-").map(s => parseInt(s.trim()));
+        if (scoreParts.length < 2) return;
+
+        const match = matches.find(m => m.id === matchId);
+        if (match) {
+          match.result = {
+            localGoals: scoreParts[0],
+            visitorGoals: scoreParts[1],
+            goals: [],
+            cards: []
+          };
+
+          // Parse goals: GOLES: (MEX) Player 45', (USA) Player 60' (P)
+          const goalsPart = parts.find(p => p.startsWith("GOLES:"));
+          if (goalsPart) {
+            const goalsText = goalsPart.replace("GOLES:", "").trim();
+            const goalEntries = goalsText.split(",").map(g => g.trim()).filter(Boolean);
+            goalEntries.forEach(entry => {
+              const minuteMatch = entry.match(/(\d+)'/);
+              const minute = minuteMatch ? minuteMatch[1] : "";
+              const isPenalty = entry.includes("(P)");
+              const isOwnGoal = entry.includes("(OG)");
+              // Strip (TEAM), minute, (P), (OG) to get name
+              const name = entry
+                .replace(/\([^)]+\)/g, "")
+                .replace(/\d+'/, "")
+                .trim();
+
+              match.result!.goals.push({
+                playerName: name,
+                minute,
+                isPenalty,
+                isOwnGoal
+              });
+            });
+          }
+
+          // Parse cards: CARDS: (MEX) Player 30' Y, (USA) Player 80' R
+          const cardsPart = parts.find(p => p.startsWith("CARDS:"));
+          if (cardsPart) {
+            const cardsText = cardsPart.replace("CARDS:", "").trim();
+            const cardEntries = cardsText.split(",").map(c => c.trim()).filter(Boolean);
+            cardEntries.forEach(entry => {
+              const minuteMatch = entry.match(/(\d+)'/);
+              const minute = minuteMatch ? minuteMatch[1] : "";
+              const isRed = entry.endsWith(" R");
+              const name = entry
+                .replace(/\([^)]+\)/g, "")
+                .replace(/\d+'/, "")
+                .replace(/\s[YR]$/, "")
+                .trim();
+
+              match.result!.cards.push({
+                playerName: name,
+                minute,
+                type: isRed ? "red" : "yellow"
+              });
+            });
+          }
+        }
+      }
     });
   });
 

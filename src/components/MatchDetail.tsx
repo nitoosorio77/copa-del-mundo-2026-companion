@@ -123,7 +123,7 @@ export function MatchDetail({
         </div>
 
         {/* Dynamic Versus Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-7 items-center gap-8 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-7 items-center gap-8 py-4 px-2">
           {/* Local Team */}
           <div className="md:col-span-3 flex flex-col items-center text-center space-y-4">
             <div
@@ -131,27 +131,40 @@ export function MatchDetail({
               className="cursor-pointer group flex flex-col items-center space-y-4"
             >
               <Flag id={match.localId} emoji={localTeam?.bandera} size="xl" />
-              <h3 className="font-sans text-2xl font-black text-neutral-900 group-hover:text-rose-500 group-hover:underline transition-all">
+              <h3 className="font-sans text-2xl font-black text-neutral-900 group-hover:text-rose-500 group-hover:underline transition-all leading-tight">
                 {localTeam ? localTeam.name : match.localId}
               </h3>
             </div>
             <p className="text-xs font-sans text-neutral-400">
               DT: <strong className="text-neutral-700">{localTeam?.dt || "Pendiente"}</strong>
             </p>
-            <span className="font-mono text-xs font-semibold text-neutral-400 tracking-wider">
-              {localTeam?.fullName}
-            </span>
           </div>
 
-          {/* Versus Center */}
-          <div className="md:col-span-1 flex flex-col items-center justify-center space-y-2 select-none">
-            <div className="h-12 w-12 rounded-full bg-neutral-50 border border-neutral-200 flex items-center justify-center font-sans font-black text-sm text-neutral-400 shadow-inner">
-              VS
+          {/* Versus Center / Score */}
+          <div className="md:col-span-1 flex flex-col items-center justify-center space-y-4 select-none">
+            {match.result ? (
+              <div className="flex items-center gap-4">
+                <div className="flex items-center justify-center h-16 w-14 rounded-2xl bg-neutral-900 text-white font-mono text-4xl font-black shadow-lg shadow-neutral-900/20">
+                  {match.result.localGoals}
+                </div>
+                <div className="font-sans font-black text-2xl text-neutral-300">
+                  -
+                </div>
+                <div className="flex items-center justify-center h-16 w-14 rounded-2xl bg-neutral-900 text-white font-mono text-4xl font-black shadow-lg shadow-neutral-900/20">
+                  {match.result.visitorGoals}
+                </div>
+              </div>
+            ) : (
+              <div className="h-14 w-14 rounded-full bg-neutral-50 border border-neutral-200 flex items-center justify-center font-sans font-black text-sm text-neutral-400 shadow-inner">
+                VS
+              </div>
+            )}
+            <div className="flex flex-col items-center">
+              <div className="h-4 w-[1px] bg-neutral-200" />
+              <span className="font-sans font-extrabold text-[10px] text-neutral-400 tracking-widest uppercase mt-1">
+                {match.result ? "Finalizado" : `Partido #${match.id}`}
+              </span>
             </div>
-            <div className="h-4 w-[1px] bg-neutral-200" />
-            <span className="font-sans font-extrabold text-[10px] text-neutral-400 tracking-widest uppercase">
-              Partido #{match.id}
-            </span>
           </div>
 
           {/* Visitor Team */}
@@ -161,18 +174,62 @@ export function MatchDetail({
               className="cursor-pointer group flex flex-col items-center space-y-4"
             >
               <Flag id={match.visitorId} emoji={visitorTeam?.bandera} size="xl" />
-              <h3 className="font-sans text-2xl font-black text-neutral-900 group-hover:text-rose-500 group-hover:underline transition-all">
+              <h3 className="font-sans text-2xl font-black text-neutral-900 group-hover:text-rose-500 group-hover:underline transition-all leading-tight">
                 {visitorTeam ? visitorTeam.name : match.visitorId}
               </h3>
             </div>
             <p className="text-xs font-sans text-neutral-400">
               DT: <strong className="text-neutral-700">{visitorTeam?.dt || "Pendiente"}</strong>
             </p>
-            <span className="font-mono text-xs font-semibold text-neutral-400 tracking-wider">
-              {visitorTeam?.fullName}
-            </span>
           </div>
         </div>
+
+        {/* Match Events (Goals and Cards) */}
+        {match.result && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-neutral-100 mt-8 pt-8">
+            <div className="space-y-4">
+              <h4 className="font-sans text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                Goleadores
+              </h4>
+              <div className="space-y-3">
+                {match.result.goals.length > 0 ? match.result.goals.map((goal, idx) => (
+                  <div key={idx} className="flex items-center gap-3 text-sm font-sans">
+                    <div className="h-6 w-6 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px] font-bold border border-emerald-100 shrink-0">
+                      GP
+                    </div>
+                    <span className="font-semibold text-neutral-800">{goal.playerName}</span>
+                    <span className="text-neutral-400 ml-auto font-mono text-xs">{goal.minute}' {goal.isPenalty && "(P)"} {goal.isOwnGoal && "(OG)"}</span>
+                  </div>
+                )) : (
+                  <p className="text-xs text-neutral-400 italic">Sin goles registrados.</p>
+                )}
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <h4 className="font-sans text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+                Tarjetas e Incidencias
+              </h4>
+              <div className="space-y-3">
+                {match.result.cards.length > 0 ? match.result.cards.map((card, idx) => (
+                  <div key={idx} className="flex items-center gap-3 text-sm font-sans">
+                    <div className={`h-6 w-4 rounded-xs border shadow-xs shrink-0 ${
+                      card.type === "red" 
+                        ? "bg-rose-500 border-rose-600" 
+                        : "bg-amber-400 border-amber-500"
+                    }`} />
+                    <span className="font-semibold text-neutral-800">{card.playerName}</span>
+                    <span className="text-neutral-400 ml-auto font-mono text-xs">{card.minute}'</span>
+                  </div>
+                )) : (
+                  <p className="text-xs text-neutral-400 italic">Sin tarjetas registradas en este encuentro.</p>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Stadium Info snippet and TV tags */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-neutral-100 mt-8 pt-6">

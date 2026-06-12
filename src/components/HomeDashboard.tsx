@@ -335,6 +335,11 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
                               <span className="font-mono text-xs font-medium text-neutral-400 group-hover:text-rose-500">
                                 {match.localId}
                               </span>
+                              {match.result && (
+                                <span className="ml-auto font-mono text-sm font-bold bg-neutral-100 border border-neutral-200/50 px-2.5 py-0.5 rounded-lg text-neutral-700">
+                                  {match.result.localGoals}
+                                </span>
+                              )}
                             </div>
 
                             <div
@@ -348,6 +353,11 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
                               <span className="font-mono text-xs font-medium text-neutral-400 group-hover:text-rose-500">
                                 {match.visitorId}
                               </span>
+                              {match.result && (
+                                <span className="ml-auto font-mono text-sm font-bold bg-neutral-100 border border-neutral-200/50 px-2.5 py-0.5 rounded-lg text-neutral-700">
+                                  {match.result.visitorGoals}
+                                </span>
+                              )}
                             </div>
                           </div>
                         </div>

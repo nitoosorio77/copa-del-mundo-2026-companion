@@ -51,6 +51,26 @@ export interface Player {
   nota?: string;
 }
 
+export interface Goal {
+  playerName: string;
+  minute: string;
+  isPenalty?: boolean;
+  isOwnGoal?: boolean;
+}
+
+export interface Card {
+  playerName: string;
+  minute: string;
+  type: "yellow" | "red";
+}
+
+export interface MatchResult {
+  localGoals: number;
+  visitorGoals: number;
+  goals: Goal[];
+  cards: Card[];
+}
+
 export interface Match {
   id: number; // match number 1 to 104
   date: string; // e.g., "Jue 11 jun"
@@ -63,6 +83,7 @@ export interface Match {
   venueName: string; // e.g., "Ciudad de México"
   tv: string[]; // e.g., ["DSports", "Telefe"]
   phase: "grupo" | "eliminatoria";
+  result?: MatchResult;
 }
 
 export interface Group {
