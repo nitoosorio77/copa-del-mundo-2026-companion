@@ -9,9 +9,9 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Jue 11 jun 2026
 - **partido:** 1 | 16:00 | MEX | SUD | A | MX-01 | DSports, Telefe, Disney+
-- **resultado:** 1 | 2-1 | GOLES: (MEX) Lionel Messi 45', (MEX) Julián Álvarez 75' (P), (SUD) Mothiba 12' | CARDS: (MEX) Romero 30' Y, (SUD) Mokoena 88' R
+- **resultado:** 1 | 2-0 | GOLES: (MEX) Julian Quiñones 9', (MEX) Raúl Jiménez 67' | CARDS: (MEX) Israel Reyes 22' Y, (MEX) César Montes 90+2' R, (SUD) Yaya Sithole 50' R, (SUD) Nkosinathi Sibisi 73' Y, (SUD) Themba Zwane 84' R
 - **partido:** 2 | 23:00 | COR | CHE | A | MX-02 | DSports, TyC Sports
-- **resultado:** 2 | 0-0 | CARDS: (CHE) Akanji 42' Y
+- **resultado:** 2 | 2-1 | GOLES: (CHE) Ladislav Krejčí 58', (COR) Hwang In-beom 67', (COR) Oh Hyeon-gyu 79' | CARDS: (COR) Lee Gi-hyuk 90+5' Y
 
 
 ### Vie 12 jun 2026
