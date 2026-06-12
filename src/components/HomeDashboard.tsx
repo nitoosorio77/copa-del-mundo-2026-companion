@@ -59,6 +59,20 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
     });
   }, [matches, activeDate, selectedDate, selectedPhase]);
 
+  // Group matches by date for display
+  const groupedMatches = useMemo(() => {
+    const groups: { [key: string]: Match[] } = {};
+    filteredMatches.forEach(m => {
+      if (!groups[m.date]) groups[m.date] = [];
+      groups[m.date].push(m);
+    });
+    return Object.entries(groups).sort((a, b) => {
+      const [d1, m1, y1] = a[0].split("/").map(Number);
+      const [d2, m2, y2] = b[0].split("/").map(Number);
+      return new Date(y1, m1 - 1, d1).getTime() - new Date(y2, m2 - 1, d2).getTime();
+    });
+  }, [filteredMatches]);
+
   // Set active date appropriately if phase filters change
   React.useEffect(() => {
     if (dateRibbon.length > 0) {
@@ -271,111 +285,133 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
             </span>
           </div>
 
-          <div className="space-y-4">
-            {filteredMatches.map(match => {
-              const localTeam = teams.find(t => t.id === match.localId);
-              const visitorTeam = teams.find(t => t.id === match.visitorId);
-              const isCupGroup = match.group.length === 1;
-
-              return (
-                <div
-                  key={match.id}
-                  className="rounded-2xl border border-neutral-200/50 bg-white p-5 shadow-xs hover:shadow-md hover:border-neutral-200 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 relative overflow-hidden"
-                >
-                  {/* Phase Label Indicator Stripe */}
-                  <div className={`absolute top-0 left-0 h-full w-[4px] ${isCupGroup ? "bg-indigo-500" : "bg-rose-500"}`} />
-
-                  {/* Left Side: Score / Match Header */}
-                  <div className="space-y-3 pl-2 flex-1 md:border-r border-neutral-100/60 md:pr-4">
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="font-mono text-xs font-black text-rose-500 uppercase tracking-wide">
-                        Partida #{match.id}
-                      </span>
-                      <span className="h-1 w-1 rounded-full bg-neutral-300" />
-                      <span className="font-sans text-xs font-bold text-neutral-500">
-                        {isCupGroup ? `Grupo ${match.group}` : `Fase ${match.group}`}
-                      </span>
-                    </div>
-
-                    {/* Team flags and codes */}
-                    <div className="space-y-2.5 py-1">
-                      <div
-                        onClick={() => onChangeState({ page: "team", selectedTeamId: match.localId })}
-                        className="flex items-center gap-3.5 group cursor-pointer w-fit select-none"
-                      >
-                        <Flag id={match.localId} emoji={localTeam?.bandera} size="md" />
-                        <span className="font-sans font-semibold text-neutral-800 group-hover:text-rose-500 group-hover:underline transition-all">
-                          {localTeam ? localTeam.fullName : match.localId}
-                        </span>
-                        <span className="font-mono text-xs font-medium text-neutral-400 group-hover:text-rose-500">
-                          {match.localId}
-                        </span>
-                      </div>
-
-                      <div
-                        onClick={() => onChangeState({ page: "team", selectedTeamId: match.visitorId })}
-                        className="flex items-center gap-3.5 group cursor-pointer w-fit select-none"
-                      >
-                        <Flag id={match.visitorId} emoji={visitorTeam?.bandera} size="md" />
-                        <span className="font-sans font-semibold text-neutral-800 group-hover:text-rose-500 group-hover:underline transition-all">
-                          {visitorTeam ? visitorTeam.fullName : match.visitorId}
-                        </span>
-                        <span className="font-mono text-xs font-medium text-neutral-400 group-hover:text-rose-500">
-                          {match.visitorId}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right Side: Venue Weather, Time and Actions */}
-                  <div className="flex flex-col justify-between md:items-end gap-3 min-w-[190px]">
-                    {/* Time indicator */}
-                    <div className="flex items-center gap-1.5 md:justify-end text-neutral-800">
-                      <Clock className="h-4 w-4 text-rose-500 shrink-0" />
-                      <span className="font-mono text-sm font-extrabold tracking-tight">
-                        {match.time}
-                      </span>
-                    </div>
-
-                    {/* Stadium and city button trigger */}
-                    <div
-                      onClick={() => onChangeState({ page: "venue", selectedVenueId: match.venueId })}
-                      className="flex items-center gap-1.5 text-xs font-sans text-neutral-500 hover:text-blue-600 cursor-pointer select-none transition-colors"
-                    >
-                      <MapPin className="h-3.5 w-3.5 text-blue-500 shrink-0" />
-                      <span className="hover:underline tracking-wide truncate max-w-[170px]}">
-                        {match.venueName}
-                      </span>
-                    </div>
-
-                    {/* TV Channels Block */}
-                    <div className="flex flex-wrap gap-1 md:justify-end">
-                      {match.tv.map((ch, i) => (
-                        <span
-                          key={i}
-                          className="inline-flex items-center gap-1 shrink-0 rounded-md bg-neutral-100 border border-neutral-200/50 px-2 py-0.5 font-sans text-[10px] font-semibold text-neutral-600"
-                        >
-                          <Tv className="h-2.5 w-2.5 text-rose-400 shrink-0" />
-                          {ch}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Link trigger detail ficha with calendar reminder option */}
-                    <div className="grid grid-cols-2 gap-2.5 w-full mt-1">
-                      <button
-                        onClick={() => onChangeState({ page: "match", selectedMatchId: match.id })}
-                        className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-neutral-900 hover:bg-rose-500 text-white font-sans text-xs font-bold py-2 px-3 transition-all cursor-pointer"
-                      >
-                        Ficha
-                        <ArrowRight className="h-3 w-3" />
-                      </button>
-                      <MatchCalendarMenu match={match} teams={teams} />
-                    </div>
-                  </div>
+          <div className="space-y-8">
+            {groupedMatches.map(([date, matchesInDate]) => (
+              <div key={date} className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="h-[2px] flex-1 bg-neutral-100" />
+                  <span className="font-mono text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] bg-neutral-50 px-3 py-1 rounded-full border border-neutral-200/50">
+                    {date}
+                  </span>
+                  <div className="h-[2px] flex-1 bg-neutral-100" />
                 </div>
-              );
-            })}
+                
+                <div className="space-y-4">
+                  {matchesInDate.map(match => {
+                    const localTeam = teams.find(t => t.id === match.localId);
+                    const visitorTeam = teams.find(t => t.id === match.visitorId);
+                    const isCupGroup = match.group.length === 1;
+
+                    return (
+                      <div
+                        key={match.id}
+                        className="rounded-2xl border border-neutral-200/50 bg-white p-5 shadow-xs hover:shadow-md hover:border-neutral-200 transition-all flex flex-col md:flex-row md:items-center justify-between gap-4 relative overflow-hidden"
+                      >
+                        {/* Phase Label Indicator Stripe */}
+                        <div className={`absolute top-0 left-0 h-full w-[4px] ${isCupGroup ? "bg-indigo-500" : "bg-rose-500"}`} />
+
+                        {/* Left Side: Score / Match Header */}
+                        <div className="space-y-3 pl-2 flex-1 md:border-r border-neutral-100/60 md:pr-4">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="font-mono text-xs font-black text-rose-500 uppercase tracking-wide">
+                              Partida #{match.id}
+                            </span>
+                            <span className="h-1 w-1 rounded-full bg-neutral-300" />
+                            <span className="font-sans text-xs font-bold text-neutral-500">
+                              {isCupGroup ? `Grupo ${match.group}` : `Fase ${match.group}`}
+                            </span>
+                          </div>
+
+                          {/* Team flags and codes */}
+                          <div className="space-y-2.5 py-1">
+                            <div
+                              onClick={() => onChangeState({ page: "team", selectedTeamId: match.localId })}
+                              className="flex items-center gap-3.5 group cursor-pointer w-fit select-none"
+                            >
+                              <Flag id={match.localId} emoji={localTeam?.bandera} size="md" />
+                              <span className="font-sans font-semibold text-neutral-800 group-hover:text-rose-500 group-hover:underline transition-all">
+                                {localTeam ? localTeam.fullName : match.localId}
+                              </span>
+                              <span className="font-mono text-xs font-medium text-neutral-400 group-hover:text-rose-500">
+                                {match.localId}
+                              </span>
+                            </div>
+
+                            <div
+                              onClick={() => onChangeState({ page: "team", selectedTeamId: match.visitorId })}
+                              className="flex items-center gap-3.5 group cursor-pointer w-fit select-none"
+                            >
+                              <Flag id={match.visitorId} emoji={visitorTeam?.bandera} size="md" />
+                              <span className="font-sans font-semibold text-neutral-800 group-hover:text-rose-500 group-hover:underline transition-all">
+                                {visitorTeam ? visitorTeam.fullName : match.visitorId}
+                              </span>
+                              <span className="font-mono text-xs font-medium text-neutral-400 group-hover:text-rose-500">
+                                {match.visitorId}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Right Side: Venue Weather, Time and Actions */}
+                        <div className="flex flex-col justify-between md:items-end gap-3 min-w-[190px]">
+                          {/* Date and Time indicator */}
+                          <div className="flex flex-col md:items-end gap-1">
+                            <div className="flex items-center gap-1.5 text-neutral-400">
+                              <Calendar className="h-3.5 w-3.5" />
+                              <span className="font-mono text-[11px] font-bold tracking-tight">
+                                {match.date}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-1.5 text-neutral-800">
+                              <Clock className="h-4 w-4 text-rose-500 shrink-0" />
+                              <span className="font-mono text-sm font-extrabold tracking-tight">
+                                {match.time}
+                              </span>
+                            </div>
+                          </div>
+
+                          {/* Stadium and city button trigger */}
+                          <div
+                            onClick={() => onChangeState({ page: "venue", selectedVenueId: match.venueId })}
+                            className="flex items-center gap-1.5 text-xs font-sans text-neutral-500 hover:text-blue-600 cursor-pointer select-none transition-colors"
+                          >
+                            <MapPin className="h-3.5 w-3.5 text-blue-500 shrink-0" />
+                            <span className="hover:underline tracking-wide truncate max-w-[170px]}">
+                              {match.venueName}
+                            </span>
+                          </div>
+
+                          {/* TV Channels Block */}
+                          <div className="flex flex-wrap gap-1 md:justify-end">
+                            {match.tv.map((ch, i) => (
+                              <span
+                                key={i}
+                                className="inline-flex items-center gap-1 shrink-0 rounded-md bg-neutral-100 border border-neutral-200/50 px-2 py-0.5 font-sans text-[10px] font-semibold text-neutral-600"
+                              >
+                                <Tv className="h-2.5 w-2.5 text-rose-400 shrink-0" />
+                                {ch}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Link trigger detail ficha with calendar reminder option */}
+                          <div className="grid grid-cols-2 gap-2.5 w-full mt-1">
+                            <button
+                              onClick={() => onChangeState({ page: "match", selectedMatchId: match.id })}
+                              className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-neutral-900 hover:bg-rose-500 text-white font-sans text-xs font-bold py-2 px-3 transition-all cursor-pointer"
+                            >
+                              Ficha
+                              <ArrowRight className="h-3 w-3" />
+                            </button>
+                            <MatchCalendarMenu match={match} teams={teams} />
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
 
             {filteredMatches.length === 0 && (
               <div className="rounded-2xl border border-dashed border-neutral-300 p-12 text-center max-w-lg mx-auto">
