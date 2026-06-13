@@ -100,7 +100,14 @@ export function MatchDetail({
         {/* Match Header metadata */}
         <div className="flex flex-col sm:flex-row items-center justify-between border-b border-neutral-100 pb-5 mb-8 gap-4 text-center sm:text-left">
           <div className="space-y-1">
-            <span className="inline-flex rounded-full bg-indigo-50 border border-indigo-100 px-3 py-1 font-sans text-xs font-semibold text-indigo-500 uppercase tracking-wide">
+            <span 
+              onClick={() => match.phase === "grupo" && onChangeState({ page: "group", selectedGroupId: match.group })}
+              className={`inline-flex rounded-full border px-3 py-1 font-sans text-xs font-bold uppercase tracking-wide transition-all ${
+                match.phase === "grupo"
+                  ? "bg-indigo-50 border-indigo-100 text-indigo-500 hover:bg-indigo-100 cursor-pointer shadow-xs"
+                  : "bg-rose-50 border-rose-100 text-rose-500"
+              }`}
+            >
               {match.phase === "grupo" ? `Fase de Grupos — Grupo ${match.group}` : `Fase Eliminatoria — ${match.group}`}
             </span>
             <div className="text-xs font-sans text-neutral-400 mt-2 flex items-center justify-center sm:justify-start gap-1">

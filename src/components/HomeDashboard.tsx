@@ -48,6 +48,21 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
   // Selected date state (defaults to the first date in the ribbon list or "all")
   const [selectedDate, setSelectedDate] = useState<string>("");
 
+  // Auto-detect today's date for tournament default view
+  React.useEffect(() => {
+    if (!selectedDate && dateRibbon.length > 0) {
+      const now = new Date();
+      const dd = String(now.getDate()).padStart(2, '0');
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const yyyy = now.getFullYear();
+      const todayString = `${dd}/${mm}/${yyyy}`;
+      
+      if (dateRibbon.some(d => d.date === todayString)) {
+        setSelectedDate(todayString);
+      }
+    }
+  }, [dateRibbon, selectedDate]);
+
   const activeDate = selectedDate || (dateRibbon[0] ? dateRibbon[0].date : "");
 
   // Filtered matches for displaying
@@ -317,7 +332,17 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
                               Partida #{match.id}
                             </span>
                             <span className="h-1 w-1 rounded-full bg-neutral-300" />
-                            <span className="font-sans text-xs font-bold text-neutral-500">
+                            <span 
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (isCupGroup) onChangeState({ page: "group", selectedGroupId: match.group });
+                              }}
+                              className={`font-sans text-xs font-bold transition-colors ${
+                                isCupGroup 
+                                  ? "text-indigo-500 hover:text-indigo-600 hover:underline cursor-pointer" 
+                                  : "text-neutral-500"
+                              }`}
+                            >
                               {isCupGroup ? `Grupo ${match.group}` : `Fase ${match.group}`}
                             </span>
                           </div>
