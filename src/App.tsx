@@ -61,6 +61,25 @@ export default function App() {
     }, 16);
   };
 
+  // 1. Handle Browser History (Back/Forward buttons)
+  React.useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state) {
+        // Use a fast-track update for history navigation to ensure it feels native
+        setState(event.state);
+      }
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    
+    // Initialize current state in browser history
+    if (!window.history.state) {
+      window.history.replaceState(state, "", "");
+    }
+
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
   const onChangeState = (update: Partial<AppState>) => {
     // Determine if this is a visual page change or detail change
     const isPageChange = 
@@ -107,10 +126,15 @@ export default function App() {
           window.scrollTo({ top: 0, behavior: "instant" as any });
         }, 0);
 
-        return {
+        const finalState = {
           ...nextState,
           navigationHistory: updatedHistory
         };
+
+        // 2. Sync with Browser History API
+        window.history.pushState(finalState, "", "");
+
+        return finalState;
       });
     });
   };
