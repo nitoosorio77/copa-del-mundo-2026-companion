@@ -98,6 +98,9 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
     }
   }, [selectedPhase, dateRibbon, activeDate, selectedDate]);
 
+  const championshipRecordCount = teams.reduce((acc, t) => acc + t.campeonatos, 0);
+  const featuredGroups = ["A", "C", "H", "J"];
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* 1. HERO BRAND PREFACE */}
