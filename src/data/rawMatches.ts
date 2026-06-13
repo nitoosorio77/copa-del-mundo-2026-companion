@@ -13,10 +13,11 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 2 | 23:00 | COR | CHE | A | MX-02 | DSports, TyC Sports
 - **resultado:** 2 | 2-1 | GOLES: (CHE) Ladislav Krejčí 58', (COR) Hwang In-beom 67', (COR) Oh Hyeon-gyu 79' | CARDS: (COR) Lee Gi-hyuk 90+5' Y
 
-
 ### Vie 12 jun 2026
 - **partido:** 3 | 16:00 | CAN | BOS | B | CA-01 | DSports
+- **resultado:** 3 | 1-1 | GOLES: (BIH) Jovo Lukić 21', (CAN) Cyle Larin 82' | CARDS: (CAN) Alphonso Davies 10' Y, (BIH) Dennis Hadžikadunić 44' Y, (BIH) Benjamin Tahirović 45' Y, (CAN) Alistair Johnston 52' Y, (BIH) Sead Kolašinac 90+2' Y
 - **partido:** 4 | 22:00 | USA | PAR | D | US-02 | DSports, Telefe, TyC Sports
+- **resultado:** 4 | 4-1 | GOLES: (PAR) Damián Bobadilla 7' (EC), (USA) Folarin Balogun 30', (USA) Folarin Balogun 45+4', (PAR) Maurício 72', (USA) Giovanni Reyna 90+7' | CARDS: (PAR) Juan José Cáceres 9' Y, (PAR) Miguel Almirón 52' Y, (USA) Tyler Adams 58' Y, (PAR) Diego Gómez 78' Y, (PAR) Álex Arce 87' Y, (PAR) Júnior Alonso 90+2' Y
 
 ### Sáb 13 jun 2026
 - **partido:** 5 | 16:00 | QAT | SUI | B | US-10 | DSports
