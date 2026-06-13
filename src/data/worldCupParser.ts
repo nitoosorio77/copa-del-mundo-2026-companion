@@ -290,9 +290,9 @@ export function parseAllData() {
             goalEntries.forEach(entry => {
               const minuteMatch = entry.match(/(\d+)'/);
               const minute = minuteMatch ? minuteMatch[1] : "";
-              const isPenalty = entry.includes("(P)");
-              const isOwnGoal = entry.includes("(OG)");
-              // Strip (TEAM), minute, (P), (OG) to get name
+              const isPenalty = entry.includes("(P)") || entry.includes("(pen)");
+              const isOwnGoal = entry.includes("(OG)") || entry.includes("(EC)");
+              // Strip (TEAM), minute, (P), (OG), (EC) to get name
               const name = entry
                 .replace(/\([^)]+\)/g, "")
                 .replace(/\d+'/, "")
