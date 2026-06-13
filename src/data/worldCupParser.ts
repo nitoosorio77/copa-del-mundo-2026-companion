@@ -293,8 +293,8 @@ export function parseAllData() {
               
               const minuteMatch = entry.match(/(\d+)'/);
               const minute = minuteMatch ? minuteMatch[1] : "";
-              const isPenalty = entry.includes("(P)") || entry.includes("(pen)");
-              const isOwnGoal = entry.includes("(OG)") || entry.includes("(EC)");
+              const isPenalty = entry.toLowerCase().includes("(p)") || entry.toLowerCase().includes("(pen)");
+              const isOwnGoal = entry.toLowerCase().includes("(og)") || entry.toLowerCase().includes("(ec)");
 
               // Strip tags to get name: (TEAM), minute, (P), (OG), (EC)
               const name = entry
