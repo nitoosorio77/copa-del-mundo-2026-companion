@@ -18,7 +18,8 @@ export function Navbar({ state, onChangeState, onGoBack }: NavbarProps) {
     { page: "home" as const, label: "Calendario", icon: Home },
     { page: "group" as const, label: "Grupos", icon: Users },
     { page: "venue" as const, label: "Sedes", icon: MapPin },
-    { page: "scorers" as const, label: "Goleadores", icon: Award }
+    { page: "scorers" as const, label: "Goleadores", icon: Award },
+    { page: "historical-scorers" as const, label: "Históricos", icon: Award }
   ];
 
   return (

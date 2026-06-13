@@ -288,18 +288,24 @@ export function parseAllData() {
             const goalsText = goalsPart.replace("GOLES:", "").trim();
             const goalEntries = goalsText.split(",").map(g => g.trim()).filter(Boolean);
             goalEntries.forEach(entry => {
+              const teamMatch = entry.match(/^\(([A-Z0-9_-]+)\)/);
+              const teamId = teamMatch ? teamMatch[1] : match.localId; // fallback to local if missing
+              
               const minuteMatch = entry.match(/(\d+)'/);
               const minute = minuteMatch ? minuteMatch[1] : "";
               const isPenalty = entry.includes("(P)") || entry.includes("(pen)");
               const isOwnGoal = entry.includes("(OG)") || entry.includes("(EC)");
-              // Strip (TEAM), minute, (P), (OG), (EC) to get name
+
+              // Strip tags to get name: (TEAM), minute, (P), (OG), (EC)
               const name = entry
-                .replace(/\([^)]+\)/g, "")
+                .replace(/^\([^)]+\)/, "") // strip leading team
+                .replace(/\([^)]+\)/g, "") // strip other tags
                 .replace(/\d+'/, "")
                 .trim();
 
               match.result!.goals.push({
                 playerName: name,
+                teamId,
                 minute,
                 isPenalty,
                 isOwnGoal
@@ -313,10 +319,14 @@ export function parseAllData() {
             const cardsText = cardsPart.replace("CARDS:", "").trim();
             const cardEntries = cardsText.split(",").map(c => c.trim()).filter(Boolean);
             cardEntries.forEach(entry => {
+              const teamMatch = entry.match(/^\(([A-Z0-9_-]+)\)/);
+              const teamId = teamMatch ? teamMatch[1] : match.localId;
+
               const minuteMatch = entry.match(/(\d+)'/);
               const minute = minuteMatch ? minuteMatch[1] : "";
               const isRed = entry.endsWith(" R");
               const name = entry
+                .replace(/^\([^)]+\)/, "")
                 .replace(/\([^)]+\)/g, "")
                 .replace(/\d+'/, "")
                 .replace(/\s[YR]$/, "")
@@ -324,6 +334,7 @@ export function parseAllData() {
 
               match.result!.cards.push({
                 playerName: name,
+                teamId,
                 minute,
                 type: isRed ? "red" : "yellow"
               });

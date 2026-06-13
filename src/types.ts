@@ -53,6 +53,7 @@ export interface Player {
 
 export interface Goal {
   playerName: string;
+  teamId: string; // ID of the team who scored
   minute: string;
   isPenalty?: boolean;
   isOwnGoal?: boolean;
@@ -60,6 +61,7 @@ export interface Goal {
 
 export interface Card {
   playerName: string;
+  teamId: string; // ID of the team who received the card
   minute: string;
   type: "yellow" | "red";
 }
@@ -101,7 +103,7 @@ export interface AppStateHistory {
 }
 
 export interface AppState {
-  page: "home" | "match" | "team" | "player" | "venue" | "group" | "scorers" | "search";
+  page: "home" | "match" | "team" | "player" | "venue" | "group" | "scorers" | "historical-scorers" | "search";
   selectedTeamId?: string;
   selectedPlayerName?: string;
   selectedVenueId?: string;

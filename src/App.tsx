@@ -14,6 +14,7 @@ import { PlayerDetail } from "./components/PlayerDetail";
 import { VenueDetail } from "./components/VenueDetail";
 import { GroupDetail } from "./components/GroupDetail";
 import { ScorersPage } from "./components/ScorersPage";
+import { TournamentScorersPage } from "./components/TournamentScorersPage";
 import { SearchPage } from "./components/SearchPage";
 import { Calendar, Globe } from "lucide-react";
 
@@ -231,6 +232,8 @@ export default function App() {
           />
         );
       case "scorers":
+        return <TournamentScorersPage matches={matches} teams={teams} onChangeState={onChangeState} />;
+      case "historical-scorers":
         return <ScorersPage />;
       case "search":
         return (
