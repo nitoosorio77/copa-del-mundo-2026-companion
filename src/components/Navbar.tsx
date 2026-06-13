@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { Search, Home, MapPin, Users, Award, ChevronLeft } from "lucide-react";
+import { Search, Home, MapPin, Users, Award, ChevronLeft, Trophy, History } from "lucide-react";
 import { AppState } from "../types";
 
 interface NavbarProps {
@@ -18,8 +18,8 @@ export function Navbar({ state, onChangeState, onGoBack }: NavbarProps) {
     { page: "home" as const, label: "Calendario", icon: Home },
     { page: "group" as const, label: "Grupos", icon: Users },
     { page: "venue" as const, label: "Sedes", icon: MapPin },
-    { page: "scorers" as const, label: "Goleadores", icon: Award },
-    { page: "historical-scorers" as const, label: "Históricos", icon: Award }
+    { page: "scorers" as const, label: "Goleadores", icon: Trophy },
+    { page: "historical-scorers" as const, label: "Históricos", icon: History }
   ];
 
   return (

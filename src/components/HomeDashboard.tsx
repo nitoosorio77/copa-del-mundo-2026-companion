@@ -98,12 +98,6 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
     }
   }, [selectedPhase, dateRibbon, activeDate, selectedDate]);
 
-  // Timezone and General Banner Details
-  const championshipRecordCount = teams.reduce((acc, t) => acc + t.campeonatos, 0);
-
-  // Group snapshot
-  const featuredGroups = ["A", "C", "H", "J"];
-
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
       {/* 1. HERO BRAND PREFACE */}
@@ -151,40 +145,18 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
           </div>
         </div>
 
-        {/* Dynamic Key Metric Badges */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 pt-8 border-t border-neutral-100 relative">
-          <div className="absolute -top-[1.5px] left-0 right-0 h-[3px] flex rounded-full overflow-hidden opacity-90">
-            <div className="h-full flex-1 bg-[#e61a22]" />
-            <div className="h-full flex-1 bg-[#8c152d]" />
-            <div className="h-full flex-1 bg-[#3c1642]" />
-            <div className="h-full flex-1 bg-[#1ba3de]" />
-            <div className="h-full flex-1 bg-[#1167b1]" />
-            <div className="h-full flex-1 bg-[#032b53]" />
-            <div className="h-full flex-1 bg-[#00a877]" />
-            <div className="h-full flex-1 bg-[#5cd632]" />
-            <div className="h-full flex-1 bg-[#0e5d32]" />
-            <div className="h-full flex-1 bg-[#ff9f1c]" />
-          </div>
-          {[
-            { value: "48", label: "Selecciones", desc: "12 Grupos Oficiales", icon: Users, color: "text-emerald-500 bg-emerald-50" },
-            { value: "16", label: "Estadios", desc: "3 Países Anfitriones", icon: MapPin, color: "text-blue-500 bg-blue-50" },
-            { value: "104", label: "Partidos", desc: "Fase de Grupos & K.O.", icon: Calendar, color: "text-rose-500 bg-rose-50" },
-            { value: championshipRecordCount.toString(), label: "Copas en Juego", desc: "Estrellas combinadas", icon: Award, color: "text-amber-500 bg-amber-50" }
-          ].map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div key={idx} className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-neutral-50/50 transition-colors">
-                <div className={`flex h-10 w-10 items-center justify-center rounded-xl shrink-0 ${item.color}`}>
-                  <Icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="font-mono text-lg font-bold text-neutral-900 leading-none">{item.value}</h4>
-                  <span className="text-xs font-sans font-semibold text-neutral-600 mt-1 block">{item.label}</span>
-                  <span className="text-[10px] font-sans text-neutral-400 block mt-0.5">{item.desc}</span>
-                </div>
-              </div>
-            );
-          })}
+        {/* Brand official spectrum decoration at the very bottom of the card */}
+        <div className="absolute bottom-0 left-0 right-0 h-[3px] flex overflow-hidden opacity-90">
+          <div className="h-full flex-1 bg-[#e61a22]" />
+          <div className="h-full flex-1 bg-[#8c152d]" />
+          <div className="h-full flex-1 bg-[#3c1642]" />
+          <div className="h-full flex-1 bg-[#1ba3de]" />
+          <div className="h-full flex-1 bg-[#1167b1]" />
+          <div className="h-full flex-1 bg-[#032b53]" />
+          <div className="h-full flex-1 bg-[#00a877]" />
+          <div className="h-full flex-1 bg-[#5cd632]" />
+          <div className="h-full flex-1 bg-[#0e5d32]" />
+          <div className="h-full flex-1 bg-[#ff9f1c]" />
         </div>
       </div>
 
