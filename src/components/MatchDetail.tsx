@@ -64,6 +64,50 @@ export function MatchDetail({
 
     return list;
   }, [venue, localTeam, visitorTeam, match]);
+  
+  // Combine goals and cards into a sorted event list
+  const matchEvents = useMemo(() => {
+    if (!match.result) return [];
+    
+    interface MatchEvent {
+      playerName: string;
+      minute: string;
+      teamId?: string;
+      eventType: "goal" | "card";
+      isPenalty?: boolean;
+      isOwnGoal?: boolean;
+      cardType?: "yellow" | "red";
+    }
+
+    const goals: MatchEvent[] = match.result.goals.map(g => ({
+      playerName: g.playerName,
+      minute: g.minute,
+      teamId: g.teamId,
+      eventType: "goal",
+      isPenalty: g.isPenalty,
+      isOwnGoal: g.isOwnGoal
+    }));
+
+    const cards: MatchEvent[] = match.result.cards.map(c => ({
+      playerName: c.playerName,
+      minute: c.minute,
+      teamId: c.teamId,
+      eventType: "card",
+      cardType: c.type
+    }));
+
+    const all = [...goals, ...cards];
+    
+    const parseMin = (m: string) => {
+      const parts = m.replace("'", "").split("+");
+      const base = parseInt(parts[0]) || 0;
+      const extra = parts[1] ? parseInt(parts[1]) * 0.1 : 0;
+      return base + extra;
+    };
+
+    return all.sort((a, b) => parseMin(a.minute) - parseMin(b.minute));
+  }, [match]);
+
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
@@ -191,48 +235,73 @@ export function MatchDetail({
           </div>
         </div>
 
-        {/* Match Events (Goals and Cards) */}
+        {/* Match Events (Chronological & Aligned by Team) */}
         {match.result && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-neutral-100 mt-8 pt-8">
-            <div className="space-y-4">
-              <h4 className="font-sans text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                Goleadores
-              </h4>
-              <div className="space-y-3">
-                {match.result.goals.length > 0 ? match.result.goals.map((goal, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-sm font-sans">
-                    <div className="h-6 w-6 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px] font-bold border border-emerald-100 shrink-0">
-                      GP
-                    </div>
-                    <span className="font-semibold text-neutral-800">{goal.playerName}</span>
-                    <span className="text-neutral-400 ml-auto font-mono text-xs">{goal.minute}' {goal.isPenalty && "(P)"} {goal.isOwnGoal && "(OG)"}</span>
-                  </div>
-                )) : (
-                  <p className="text-xs text-neutral-400 italic">Sin goles registrados.</p>
-                )}
-              </div>
-            </div>
+          <div className="border-t border-neutral-100 mt-8 pt-8">
+            <div className="relative grid grid-cols-2 gap-x-12">
+              {/* Vertical timeline line (desktop) */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-neutral-100 hidden md:block" />
 
-            <div className="space-y-4">
-              <h4 className="font-sans text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
-                Tarjetas e Incidencias
-              </h4>
-              <div className="space-y-3">
-                {match.result.cards.length > 0 ? match.result.cards.map((card, idx) => (
-                  <div key={idx} className="flex items-center gap-3 text-sm font-sans">
-                    <div className={`h-6 w-4 rounded-xs border shadow-xs shrink-0 ${
-                      card.type === "red" 
-                        ? "bg-rose-500 border-rose-600" 
-                        : "bg-amber-400 border-amber-500"
-                    }`} />
-                    <span className="font-semibold text-neutral-800">{card.playerName}</span>
-                    <span className="text-neutral-400 ml-auto font-mono text-xs">{card.minute}'</span>
-                  </div>
-                )) : (
-                  <p className="text-xs text-neutral-400 italic">Sin tarjetas registradas en este encuentro.</p>
-                )}
+              {/* Local Events Component */}
+              <div className="space-y-5">
+                <h4 className="font-sans text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] flex items-center justify-start gap-2 mb-4">
+                  <span className="h-1.5 w-1.5 rounded-full bg-neutral-300" />
+                  Incidencias {localTeam?.name || match.localId}
+                </h4>
+                <div className="space-y-4">
+                  {matchEvents.filter(e => e.teamId === match.localId).length > 0 ? (
+                    matchEvents.filter(e => e.teamId === match.localId).map((event, idx) => (
+                      <div key={idx} className="flex items-center gap-3 text-sm font-sans">
+                        {event.eventType === "goal" ? (
+                          <div className="h-6 w-6 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px] font-bold border border-emerald-100 shrink-0">
+                            GP
+                          </div>
+                        ) : (
+                          <div className={`h-6 w-4 rounded-xs border shadow-xs shrink-0 ${
+                            event.cardType === "red" 
+                              ? "bg-rose-500 border-rose-600" 
+                              : "bg-amber-400 border-amber-500"
+                          }`} />
+                        )}
+                        <span className="font-semibold text-neutral-800">{event.playerName}</span>
+                        <span className="text-neutral-400 ml-auto font-mono text-xs">{event.minute}' {event.isPenalty && "(P)"} {event.isOwnGoal && "(OG)"}</span>
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-xs text-neutral-300 italic">Sin incidencias registradas</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Visitor Events Component */}
+              <div className="space-y-5 text-right md:text-left">
+                <h4 className="font-sans text-[10px] font-bold text-neutral-400 uppercase tracking-[0.2em] flex items-center justify-end md:justify-start gap-2 mb-4">
+                  <span className="h-1.5 w-1.5 rounded-full bg-neutral-300" />
+                  Incidencias {visitorTeam?.name || match.visitorId}
+                </h4>
+                <div className="space-y-4">
+                  {matchEvents.filter(e => e.teamId === match.visitorId).length > 0 ? (
+                    matchEvents.filter(e => e.teamId === match.visitorId).map((event, idx) => (
+                      <div key={idx} className="flex items-center justify-end md:justify-start gap-3 text-sm font-sans">
+                        <span className="text-neutral-400 mr-auto md:mr-0 md:ml-auto order-1 md:order-3 font-mono text-xs">{event.minute}' {event.isPenalty && "(P)"} {event.isOwnGoal && "(OG)"}</span>
+                        <span className="font-semibold text-neutral-800 order-2">{event.playerName}</span>
+                        {event.eventType === "goal" ? (
+                          <div className="h-6 w-6 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px] font-bold border border-emerald-100 shrink-0 order-3 md:order-1">
+                            GP
+                          </div>
+                        ) : (
+                          <div className={`h-6 w-4 rounded-xs border shadow-xs shrink-0 order-3 md:order-1 ${
+                            event.cardType === "red" 
+                              ? "bg-rose-500 border-rose-600" 
+                              : "bg-amber-400 border-amber-500"
+                          }`} />
+                        )}
+                      </div>
+                    ))
+                  ) : (
+                    <p className="text-xs text-neutral-300 italic">Sin incidencias registradas</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
