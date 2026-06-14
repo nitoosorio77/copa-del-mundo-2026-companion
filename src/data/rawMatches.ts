@@ -31,7 +31,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 8 | 01:00 | AUS | TUR | D | CA-02 | DSports, TyC Sports
 - **resultado:** 8 | 2-0 | GOLES: (AUS) Nestory Irankunda 26', (AUS) Connor Metcalfe 74' | CARDS: (TUR) Yunus Akgün 85' Y
 - **partido:** 9 | 14:00 | ALE | CUR | E | US-04 | DSports
-- **resultado:** 9 | 1-0 | GOLES: (ALE) Felix Nmecha 5' | CARDS: Sin amonestaciones registradas al momento
+- **resultado:** 9 | 1-1 | GOLES: (ALE) Felix Nmecha 5', (CUR) Livano Comenencia 21' | CARDS: Sin amonestaciones registradas al momento
 - **partido:** 10 | 17:00 | HOL | JAP | F | US-03 | DSports, Telefe, TyC Sports
 - **partido:** 11 | 20:00 | CIV | ECU | E | US-07 | DSports, Telefe, Disney+, TyC Sports
 - **partido:** 12 | 23:00 | SUE | TUN | F | MX-03 | DSports, TyC Sports
