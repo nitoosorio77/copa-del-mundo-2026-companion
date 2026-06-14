@@ -33,6 +33,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 9 | 14:00 | ALE | CUR | E | US-04 | DSports
 - **resultado:** 9 | 7-1 | GOLES: (ALE) Felix Nmecha 6', (CUR) Livano Comenencia 21', (ALE) Nico Schlotterbeck 38', (ALE) Kai Havertz 50' (P), (ALE) Jamal Musiala 47', (ALE) Nathaniel Brown 68', (ALE) Deniz Undav 78', (ALE) Kai Havertz 88' | CARDS: Sin tarjetas registradas
 - **partido:** 10 | 17:00 | HOL | JAP | F | US-03 | DSports, Telefe, TyC Sports
+- **resultado:** 10 | 1-0 | GOLES: (HOL) Virgil van Dijk 51' | CARDS: Sin tarjetas registradas
 - **partido:** 11 | 20:00 | CIV | ECU | E | US-07 | DSports, Telefe, Disney+, TyC Sports
 - **partido:** 12 | 23:00 | SUE | TUN | F | MX-03 | DSports, TyC Sports
 
