@@ -23,6 +23,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 5 | 16:00 | QAT | SUI | B | US-10 | DSports
 - **resultado:** 5 | 1-1 | GOLES: (SUI) Breel Embolo 16' (PEN), (QAT) Boualem Khoukhi 94' | CARDS: (QAT) Mahmud Abunada 15' Y, (QAT) Jassem Gaber 22' Y, (SUI) Denis Zakaria 41' Y
 - **partido:** 6 | 19:00 | BRA | MAR | C | US-01 | DSports, Telefe, Disney+
+- **resultado:** 6 | 1-1 | GOLES: (MAR) Ismael Saibari 20', (BRA) Vinícius Júnior 31' | CARDS: (BRA) Casemiro 36' Y, (BRA) Roger Ibañez 42' Y
 - **partido:** 7 | 22:00 | HAI | ESC | C | US-08 | DSports, TyC Sports
 
 ### Dom 14 jun 2026
