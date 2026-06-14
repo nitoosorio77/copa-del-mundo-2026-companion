@@ -108,6 +108,9 @@ export function MatchDetail({
     return all.sort((a, b) => parseMin(a.minute) - parseMin(b.minute));
   }, [match]);
 
+  const findPlayer = (playerName: string, teamId: string) =>
+    players.find(p => p.equipoId === teamId && p.name === playerName);
+
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
@@ -263,7 +266,19 @@ export function MatchDetail({
                               : "bg-amber-400 border-amber-500"
                           }`} />
                         )}
-                        <span className="font-semibold text-neutral-800">{event.playerName}</span>
+                        {(() => {
+                          const p = findPlayer(event.playerName, event.teamId!);
+                          return p ? (
+                            <span
+                              className="font-semibold text-neutral-800 hover:text-rose-500 hover:underline cursor-pointer transition-colors"
+                              onClick={() => onChangeState({ page: "player", selectedPlayerName: p.name, selectedTeamId: p.equipoId })}
+                            >
+                              {event.playerName}
+                            </span>
+                          ) : (
+                            <span className="font-semibold text-neutral-800">{event.playerName}</span>
+                          );
+                        })()}
                         <span className="text-neutral-400 ml-auto font-mono text-xs">{event.minute}' {event.isPenalty && "(P)"} {event.isOwnGoal && "(OG)"}</span>
                       </div>
                     ))
@@ -284,7 +299,19 @@ export function MatchDetail({
                     matchEvents.filter(e => e.teamId === match.visitorId).map((event, idx) => (
                       <div key={idx} className="flex items-center justify-end md:justify-start gap-3 text-sm font-sans">
                         <span className="text-neutral-400 mr-auto md:mr-0 md:ml-auto order-1 md:order-3 font-mono text-xs">{event.minute}' {event.isPenalty && "(P)"} {event.isOwnGoal && "(OG)"}</span>
-                        <span className="font-semibold text-neutral-800 order-2">{event.playerName}</span>
+                        {(() => {
+                          const p = findPlayer(event.playerName, event.teamId!);
+                          return p ? (
+                            <span
+                              className="font-semibold text-neutral-800 order-2 hover:text-rose-500 hover:underline cursor-pointer transition-colors"
+                              onClick={() => onChangeState({ page: "player", selectedPlayerName: p.name, selectedTeamId: p.equipoId })}
+                            >
+                              {event.playerName}
+                            </span>
+                          ) : (
+                            <span className="font-semibold text-neutral-800 order-2">{event.playerName}</span>
+                          );
+                        })()}
                         {event.eventType === "goal" ? (
                           <div className="h-6 w-6 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center text-[10px] font-bold border border-emerald-100 shrink-0 order-3 md:order-1">
                             GP
