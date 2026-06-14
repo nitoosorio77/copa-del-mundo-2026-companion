@@ -25,6 +25,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 6 | 19:00 | BRA | MAR | C | US-01 | DSports, Telefe, Disney+
 - **resultado:** 6 | 1-1 | GOLES: (MAR) Ismael Saibari 20', (BRA) Vinícius Júnior 31' | CARDS: (BRA) Casemiro 36' Y, (BRA) Roger Ibañez 42' Y
 - **partido:** 7 | 22:00 | HAI | ESC | C | US-08 | DSports, TyC Sports
+- **resultado:** 7 | 0-1 | GOLES: (ESC) John McGinn 27' | CARDS: (HAI) Jean-Ricner Bellegarde 38' Y, (ESC) Aaron Hickey 45' Y, (ESC) Findlay Curtis 90' Y, (ESC) Kenny McLean 94' Y
 
 ### Dom 14 jun 2026
 - **partido:** 8 | 01:00 | AUS | TUR | D | CA-02 | DSports, TyC Sports
