@@ -37,7 +37,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 11 | 20:00 | CIV | ECU | E | US-07 | DSports, Telefe, Disney+, TyC Sports
 - **resultado:** 11 | 1-0 | GOLES: (CIV) Amad Diallo 90' | CARDS: (CIV) Seko Fofana 28' Y
 - **partido:** 12 | 23:00 | SUE | TUN | F | MX-03 | DSports, TyC Sports
-- **resultado:** 12 | 2-1 | GOLES: (SUE) Yasin Ayari 7', (SUE) Alexander Isak 30', (TUN) Omar Rekik 43' | CARDS: Sin tarjetas registradas
+- **resultado:** 12 | 5-1 | GOLES: (SUE) Yasin Ayari 7', (SUE) Alexander Isak 30', (TUN) Omar Rekik 43', (SUE) Viktor Gyökeres 59', (SUE) Mattias Svanberg 84', (SUE) Yasin Ayari 90+6' | CARDS: Sin tarjetas registradas
 
 ### Lun 15 jun 2026
 - **partido:** 13 | 13:00 | ESP | CAB | H | US-05 | DSports
