@@ -43,6 +43,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 13 | 13:00 | ESP | CAB | H | US-05 | DSports
 - **resultado:** 13 | 0-0 | GOLES: Sin goles | CARDS: (CAB) Sidny Lopes 15' Y, (ESP) Pedri 92' Y
 - **partido:** 14 | 16:00 | BEL | EGI | G | US-09 | DSports, TyC Sports
+- **resultado:** 14 | 0-1 | GOLES: (EGI) Emam Ashour 19' | CARDS: (EGI) Marwan Attia 13' Y, (BEL) Timothy Castagne 14' Y
 - **partido:** 15 | 19:00 | ARS | URU | H | US-06 | DSports, Telefe, Disney+, TyC Sports
 - **partido:** 16 | 22:00 | IRA | NZL | G | US-02 | DSports, TyC Sports
 
