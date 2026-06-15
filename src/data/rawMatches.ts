@@ -35,6 +35,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 10 | 17:00 | HOL | JAP | F | US-03 | DSports, Telefe, TyC Sports
 - **resultado:** 10 | 2-2 | GOLES: (HOL) Virgil van Dijk 50', (JAP) Keito Nakamura 57', (HOL) Crysencio Summerville 64', (JAP) Koki Ogawa 89' | CARDS: (HOL) Crysencio Summerville 60' Y
 - **partido:** 11 | 20:00 | CIV | ECU | E | US-07 | DSports, Telefe, Disney+, TyC Sports
+- **resultado:** 11 | 1-0 | GOLES: (CIV) Amad Diallo 90' | CARDS: (CIV) Seko Fofana 28' Y
 - **partido:** 12 | 23:00 | SUE | TUN | F | MX-03 | DSports, TyC Sports
 - **resultado:** 12 | 2-1 | GOLES: (SUE) Yasin Ayari 7', (SUE) Alexander Isak 30', (TUN) Omar Rekik 43' | CARDS: Sin tarjetas registradas
 
