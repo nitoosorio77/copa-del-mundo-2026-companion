@@ -37,7 +37,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 11 | 20:00 | CIV | ECU | E | US-07 | DSports, Telefe, Disney+, TyC Sports
 - **resultado:** 11 | 1-0 | GOLES: (CIV) Amad Diallo 90' | CARDS: (CIV) Seko Fofana 28' Y
 - **partido:** 12 | 23:00 | SUE | TUN | F | MX-03 | DSports, TyC Sports
-- **resultado:** 12 | 5-1 | GOLES: (SUE) Yasin Ayari 7', (SUE) Alexander Isak 30', (TUN) Omar Rekik 43', (SUE) Viktor Gyökeres 59', (SUE) Mattias Svanberg 84', (SUE) Yasin Ayari 90+6' | CARDS: Sin tarjetas registradas
+- **resultado:** 12 | 5-1 | GOLES: (SUE) Yasin Ayari 7', (SUE) Alexander Isak 30', (TUN) Omar Rekik 43', (SUE) Viktor Gyökeres 59', (SUE) Mattias Svanberg 84', (SUE) Yasin Ayari 96' | CARDS: Sin tarjetas registradas
 
 ### Lun 15 jun 2026
 - **partido:** 13 | 13:00 | ESP | CAB | H | US-05 | DSports
@@ -51,7 +51,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mar 16 jun 2026
 - **partido:** 17 | 16:00 | FRA | SEN | I | US-01 | DSports
-- **resultado:** 17 | 3-1 | GOLES: (FRA) Kylian Mbappé 66', (FRA) Bradley Barcola 82', (SEN) Ibrahim Mbaye 90+5', (FRA) Kylian Mbappé 90+6' | CARDS: Sin tarjetas registradas
+- **resultado:** 17 | 3-1 | GOLES: (FRA) Kylian Mbappé 66', (FRA) Bradley Barcola 82', (SEN) Ibrahim Mbaye 95', (FRA) Kylian Mbappé 96' | CARDS: Sin tarjetas registradas
 - **partido:** 18 | 19:00 | IRA2 | NOR | I | US-08 | DSports, TyC Sports
 - **partido:** 19 | 22:00 | ARG | DZA | J | US-11 | DSports, Telefe, Disney+, TyC Sports, TV Pública
 
