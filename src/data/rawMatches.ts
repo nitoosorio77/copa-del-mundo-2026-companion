@@ -51,6 +51,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mar 16 jun 2026
 - **partido:** 17 | 16:00 | FRA | SEN | I | US-01 | DSports
+- **resultado:** 17 | 3-1 | GOLES: (FRA) Kylian Mbappé 66', (FRA) Bradley Barcola 82', (SEN) Ibrahim Mbaye 90+5', (FRA) Kylian Mbappé 90+6' | CARDS: Sin tarjetas registradas
 - **partido:** 18 | 19:00 | IRA2 | NOR | I | US-08 | DSports, TyC Sports
 - **partido:** 19 | 22:00 | ARG | DZA | J | US-11 | DSports, Telefe, Disney+, TyC Sports, TV Pública
 
