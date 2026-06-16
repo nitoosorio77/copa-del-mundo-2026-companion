@@ -3,12 +3,36 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import { Compass, Users, MapPin, Tv, Clock, Award, ArrowRight, Info, Calendar } from "lucide-react";
 import { Match, Team, Venue, AppState } from "../types";
 import { Flag } from "./Flag";
 import { MatchCalendarMenu } from "./MatchCalendarMenu";
 import fifaLogo from "../assets/images/fifa_2026_logo_1780850177458.png";
+
+function getDefaultDate(matches: Match[]): string {
+  const now = new Date();
+  const dd = String(now.getDate()).padStart(2, '0');
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const yyyy = String(now.getFullYear());
+  const todayString = `${dd}/${mm}/${yyyy}`;
+
+  const sortedDates = [...new Set(matches.map(m => m.date))].sort((a, b) => {
+    const [d1, m1, y1] = a.split("/").map(Number);
+    const [d2, m2, y2] = b.split("/").map(Number);
+    return new Date(y1, m1 - 1, d1).getTime() - new Date(y2, m2 - 1, d2).getTime();
+  });
+
+  if (sortedDates.includes(todayString)) return todayString;
+
+  const todayObj = new Date(parseInt(yyyy), parseInt(mm) - 1, parseInt(dd));
+  const nextDate = sortedDates.find(d => {
+    const [dNum, mNum, yNum] = d.split("/").map(Number);
+    return new Date(yNum, mNum - 1, dNum) > todayObj;
+  });
+
+  return nextDate || sortedDates[sortedDates.length - 1] || "";
+}
 
 interface HomeDashboardProps {
   teams: Team[];
@@ -19,7 +43,20 @@ interface HomeDashboardProps {
 
 export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDashboardProps) {
   const [selectedPhase, setSelectedPhase] = useState<"todos" | "grupo" | "eliminatoria">("todos");
-  
+
+  // Selected date state — defaults to today (or next future match day)
+  const [selectedDate, setSelectedDate] = useState<string>(() => getDefaultDate(matches));
+
+  const ribbonRef = useRef<HTMLDivElement>(null);
+  const todayBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Scroll the ribbon so today's chip is the first visible item on mount
+  useEffect(() => {
+    if (todayBtnRef.current && ribbonRef.current) {
+      ribbonRef.current.scrollLeft = todayBtnRef.current.offsetLeft;
+    }
+  }, []);
+
   // Extract all unique dates with matches
   const dateRibbon = useMemo(() => {
     const datesMap: { [key: string]: { rawDate: string; count: number; date: string } } = {};
@@ -44,24 +81,6 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
       return new Date(y1, m1 - 1, d1).getTime() - new Date(y2, m2 - 1, d2).getTime();
     });
   }, [matches, selectedPhase]);
-
-  // Selected date state (defaults to the first date in the ribbon list or "all")
-  const [selectedDate, setSelectedDate] = useState<string>("");
-
-  // Auto-detect today's date for tournament default view
-  React.useEffect(() => {
-    if (!selectedDate && dateRibbon.length > 0) {
-      const now = new Date();
-      const dd = String(now.getDate()).padStart(2, '0');
-      const mm = String(now.getMonth() + 1).padStart(2, '0');
-      const yyyy = now.getFullYear();
-      const todayString = `${dd}/${mm}/${yyyy}`;
-      
-      if (dateRibbon.some(d => d.date === todayString)) {
-        setSelectedDate(todayString);
-      }
-    }
-  }, [dateRibbon, selectedDate]);
 
   const activeDate = selectedDate || (dateRibbon[0] ? dateRibbon[0].date : "");
 
@@ -198,11 +217,11 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
         </div>
 
         {/* Scrollable Date Ribbon */}
-        <div className="scrollbar-custom relative flex gap-2.5 overflow-x-auto pb-4 select-none cursor-grab active:cursor-grabbing">
-          {/* Opción para Ver Todo el Fixture */}
+        <div className="flex gap-3 items-start">
+          {/* "Todo el Fixture" button — fixed outside the scroll */}
           <button
             onClick={() => setSelectedDate("all")}
-            className={`flex flex-col items-center justify-center min-w-[80px] h-[100px] rounded-2xl border transition-all duration-200 focus:outline-hidden shrink-0 cursor-pointer ${
+            className={`shrink-0 flex flex-col items-center justify-center min-w-[80px] h-[100px] rounded-2xl border transition-all duration-200 focus:outline-hidden cursor-pointer ${
               selectedDate === "all"
                 ? "bg-rose-500 border-rose-500 text-white shadow-md shadow-rose-500/20 transform scale-[1.03]"
                 : "bg-white border-neutral-200 hover:border-neutral-300 text-neutral-700"
@@ -220,45 +239,50 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
             </div>
           </button>
 
-          {dateRibbon.map((item, idx) => {
-            const isActive = selectedDate !== "all" && item.date === activeDate;
-            const parts = (item.date || "11/06/2026").split("/"); // ["11", "06", "2026"]
-            const dayNum = parts[0] || "11";
-            const monthNum = parts[1] || "06";
-            const yearNum = parts[2] || "2026";
-            
-            // Reconstruct Date object to get day-of-week
-            const dObj = new Date(parseInt(yearNum), parseInt(monthNum) - 1, parseInt(dayNum));
-            const weekdays = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
-            const weekday = weekdays[dObj.getDay()] || "Día";
-            const monthStr = monthNum === "06" ? "JUN" : "JUL";
+          {/* Visual divider */}
+          <div className="w-px bg-neutral-200 shrink-0 self-stretch my-2" />
 
-            return (
-              <button
-                key={idx}
-                onClick={() => setSelectedDate(item.date)}
-                className={`flex flex-col items-center justify-center min-w-[72px] h-[100px] rounded-2xl border transition-all duration-200 focus:outline-hidden shrink-0 cursor-pointer ${
-                  isActive
-                    ? "bg-rose-500 border-rose-500 text-white shadow-md shadow-rose-500/20 transform scale-[1.03]"
-                    : "bg-white border-neutral-200 hover:border-neutral-300 text-neutral-700"
-                }`}
-              >
-                <span className={`text-[10px] font-sans font-bold uppercase tracking-wider ${isActive ? "text-rose-100" : "text-neutral-400"}`}>
-                  {weekday}
-                </span>
-                <span className="font-mono text-2xl font-extrabold tracking-tight leading-none my-1">
-                  {dayNum}
-                </span>
-                <span className={`text-[10px] font-sans font-medium tracking-widest ${isActive ? "text-rose-200" : "text-neutral-500"}`}>
-                  {monthStr}
-                </span>
-                {/* Count badge */}
-                <div className={`mt-1.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full text-[9px] font-mono font-bold leading-none ${isActive ? "bg-white/20 text-white" : "bg-neutral-100 text-neutral-500"}`}>
-                  {item.count}
-                </div>
-              </button>
-            );
-          })}
+          {/* Scrollable date chips */}
+          <div ref={ribbonRef} className="scrollbar-custom flex gap-2.5 overflow-x-auto pb-4 select-none cursor-grab active:cursor-grabbing flex-1">
+            {dateRibbon.map((item, idx) => {
+              const isActive = selectedDate !== "all" && item.date === activeDate;
+              const parts = (item.date || "11/06/2026").split("/");
+              const dayNum = parts[0] || "11";
+              const monthNum = parts[1] || "06";
+              const yearNum = parts[2] || "2026";
+
+              const dObj = new Date(parseInt(yearNum), parseInt(monthNum) - 1, parseInt(dayNum));
+              const weekdays = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+              const weekday = weekdays[dObj.getDay()] || "Día";
+              const monthStr = monthNum === "06" ? "JUN" : "JUL";
+
+              return (
+                <button
+                  key={idx}
+                  ref={isActive ? todayBtnRef : undefined}
+                  onClick={() => setSelectedDate(item.date)}
+                  className={`flex flex-col items-center justify-center min-w-[72px] h-[100px] rounded-2xl border transition-all duration-200 focus:outline-hidden shrink-0 cursor-pointer ${
+                    isActive
+                      ? "bg-rose-500 border-rose-500 text-white shadow-md shadow-rose-500/20 transform scale-[1.03]"
+                      : "bg-white border-neutral-200 hover:border-neutral-300 text-neutral-700"
+                  }`}
+                >
+                  <span className={`text-[10px] font-sans font-bold uppercase tracking-wider ${isActive ? "text-rose-100" : "text-neutral-400"}`}>
+                    {weekday}
+                  </span>
+                  <span className="font-mono text-2xl font-extrabold tracking-tight leading-none my-1">
+                    {dayNum}
+                  </span>
+                  <span className={`text-[10px] font-sans font-medium tracking-widest ${isActive ? "text-rose-200" : "text-neutral-500"}`}>
+                    {monthStr}
+                  </span>
+                  <div className={`mt-1.5 flex h-4 min-w-[16px] px-1 items-center justify-center rounded-full text-[9px] font-mono font-bold leading-none ${isActive ? "bg-white/20 text-white" : "bg-neutral-100 text-neutral-500"}`}>
+                    {item.count}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
