@@ -45,6 +45,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 14 | 16:00 | BEL | EGI | G | US-09 | DSports, TyC Sports
 - **resultado:** 14 | 1-1 | GOLES: (EGI) Emam Ashour 19', (EGI) Mohamed Hany 66' (EC) | CARDS: (EGI) Marwan Ateya 13' Y, (BEL) Timothy Castagne 14' Y, (EGI) Ahmed Abou El Fotouh 34' Y
 - **partido:** 15 | 19:00 | ARS | URU | H | US-06 | DSports, Telefe, Disney+, TyC Sports
+- **resultado:** 15 | 1-1 | GOLES: (ARS) Abdulelah Al-Amri 41', (URU) Maximiliano Araujo 80' | CARDS: (ARS) Abdulelah Al-Amri 44' Y
 - **partido:** 16 | 22:00 | IRA | NZL | G | US-02 | DSports, TyC Sports
 
 ### Mar 16 jun 2026
