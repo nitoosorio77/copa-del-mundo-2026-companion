@@ -49,12 +49,13 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
 
   const ribbonRef = useRef<HTMLDivElement>(null);
   const todayBtnRef = useRef<HTMLButtonElement>(null);
+  const prevDayBtnRef = useRef<HTMLButtonElement>(null);
 
-  // Scroll the ribbon so today's chip is the first visible item on mount
+  // Scroll so the previous match day is the first visible chip (today stays selected)
   useEffect(() => {
-    if (todayBtnRef.current && ribbonRef.current) {
-      ribbonRef.current.scrollLeft = todayBtnRef.current.offsetLeft;
-    }
+    if (!ribbonRef.current) return;
+    const target = prevDayBtnRef.current ?? todayBtnRef.current;
+    if (target) ribbonRef.current.scrollLeft = target.offsetLeft;
   }, []);
 
   // Extract all unique dates with matches
@@ -83,6 +84,9 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
   }, [matches, selectedPhase]);
 
   const activeDate = selectedDate || (dateRibbon[0] ? dateRibbon[0].date : "");
+
+  // Index of the active date in the ribbon (used to attach prevDayBtnRef)
+  const activeDateIdx = dateRibbon.findIndex(d => d.date === activeDate);
 
   // Filtered matches for displaying
   const filteredMatches = useMemo(() => {
@@ -259,7 +263,7 @@ export function HomeDashboard({ teams, venues, matches, onChangeState }: HomeDas
               return (
                 <button
                   key={idx}
-                  ref={isActive ? todayBtnRef : undefined}
+                  ref={isActive ? todayBtnRef : idx === activeDateIdx - 1 ? prevDayBtnRef : undefined}
                   onClick={() => setSelectedDate(item.date)}
                   className={`flex flex-col items-center justify-center min-w-[72px] h-[100px] rounded-2xl border transition-all duration-200 focus:outline-hidden shrink-0 cursor-pointer ${
                     isActive
