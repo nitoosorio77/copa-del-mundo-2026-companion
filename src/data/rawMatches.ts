@@ -47,6 +47,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 15 | 19:00 | ARS | URU | H | US-06 | DSports, Telefe, Disney+, TyC Sports
 - **resultado:** 15 | 1-1 | GOLES: (ARS) Abdulelah Al-Amri 41', (URU) Maximiliano Araujo 80' | CARDS: (ARS) Abdulelah Al-Amri 44' Y
 - **partido:** 16 | 22:00 | IRA | NZL | G | US-02 | DSports, TyC Sports
+- **resultado:** 16 | 2-2 | GOLES: (NZL) Elijah Just 7', (IRA) Ramin Rezaeian 32', (NZL) Elijah Just 54', (IRA) Mohammad Mohebbi 64' | CARDS: (IRA) Ehsan Hajisafi 89' Y
 
 ### Mar 16 jun 2026
 - **partido:** 17 | 16:00 | FRA | SEN | I | US-01 | DSports
