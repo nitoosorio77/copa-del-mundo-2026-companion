@@ -61,6 +61,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 20 | 01:00 | AUT | JOR | J | US-10 | DSports, TyC Sports
 - **resultado:** 20 | 3-1 | GOLES: (AUT) Romano Schmid 21', (JOR) Ali Olwan 50', (JOR) Yazan Al-Arab 76' (EC), (AUT) Marko Arnautovic 102' (P) | CARDS: (AUT) Marcel Sabitzer 77' Y
 - **partido:** 21 | 14:00 | POR | RDC | K | US-04 | DSports
+- **resultado:** 21 | 1-1 | GOLES: (POR) João Neves 6', (RDC) Yoane Wissa 45+5' | CARDS: (RDC) Chancel Mbemba 32' Y, (POR) Bernardo Silva 45' Y, (POR) Nelson Semedo 88' Y, (POR) Tomás Araújo 90+2' Y
 - **partido:** 22 | 17:00 | ING | CRO | L | US-03 | DSports, Telefe, TyC Sports
 - **partido:** 23 | 20:00 | GHA | PAN | L | CA-01 | DSports, TyC Sports
 - **partido:** 24 | 23:00 | UZB | COL | K | MX-01 | DSports, Disney+
