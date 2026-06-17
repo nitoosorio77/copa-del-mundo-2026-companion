@@ -55,7 +55,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 18 | 19:00 | IRA2 | NOR | I | US-08 | DSports, TyC Sports
 - **resultado:** 18 | 1-4 | GOLES: (NOR) Erling Haaland 29', (IRA2) Aymen Hussein 39', (NOR) Erling Haaland 43', (NOR) Leo Østigard 76', (NOR) Kristian Thorstvedt 90+7' | CARDS: (IRA2) Zaid Tahseen 86' Y
 - **partido:** 19 | 22:00 | ARG | DZA | J | US-11 | DSports, Telefe, Disney+, TyC Sports, TV Pública
-- **resultado:** 19 | 1-0 | GOLES: (ARG) Lionel Messi 17' | CARDS: Sin tarjetas registradas
+- **resultado:** 19 | 2-0 | GOLES: (ARG) Lionel Messi 17', (ARG) Lionel Messi 60' | CARDS: Sin tarjetas registradas
 
 ### Mié 17 jun 2026
 - **partido:** 20 | 01:00 | AUT | JOR | J | US-10 | DSports, TyC Sports
