@@ -17,6 +17,7 @@ import { ScorersPage } from "./components/ScorersPage";
 import { TournamentScorersPage } from "./components/TournamentScorersPage";
 import { SearchPage } from "./components/SearchPage";
 import { Calendar, Globe } from "lucide-react";
+import { ConfettiAlbiceleste } from "./components/ConfettiAlbiceleste";
 
 export default function App() {
   // Parse all assets and structures once during load
@@ -309,6 +310,9 @@ export default function App() {
           </div>
         </div>
       )}
+
+      {/* Confeti albiceleste — activo hasta el 19/06 en celebración del triunfo ARG */}
+      <ConfettiAlbiceleste />
 
       {/* Dynamic Header navbar */}
       <Navbar state={state} onChangeState={onChangeState} onGoBack={onGoBack} />
