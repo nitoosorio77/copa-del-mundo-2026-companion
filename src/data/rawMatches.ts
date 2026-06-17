@@ -59,7 +59,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mié 17 jun 2026
 - **partido:** 20 | 01:00 | AUT | JOR | J | US-10 | DSports, TyC Sports
-- **resultado:** 20 | 1-1 | GOLES: (AUT) Romano Schmid 20', (JOR) Ali Olwan 50' | CARDS: Sin tarjetas registradas
+- **resultado:** 20 | 3-1 | GOLES: (AUT) Romano Schmid 21', (JOR) Ali Olwan 50', (JOR) Yazan Al-Arab 76' (EC), (AUT) Marko Arnautovic 90+12' (P) | CARDS: (AUT) Marcel Sabitzer 77' Y
 - **partido:** 21 | 14:00 | POR | RDC | K | US-04 | DSports
 - **partido:** 22 | 17:00 | ING | CRO | L | US-03 | DSports, Telefe, TyC Sports
 - **partido:** 23 | 20:00 | GHA | PAN | L | CA-01 | DSports, TyC Sports
