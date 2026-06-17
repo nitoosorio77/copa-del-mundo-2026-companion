@@ -53,6 +53,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 17 | 16:00 | FRA | SEN | I | US-01 | DSports
 - **resultado:** 17 | 3-1 | GOLES: (FRA) Kylian Mbappé 66', (FRA) Bradley Barcola 82', (SEN) Ibrahim Mbaye 95', (FRA) Kylian Mbappé 96' | CARDS: Sin tarjetas registradas
 - **partido:** 18 | 19:00 | IRA2 | NOR | I | US-08 | DSports, TyC Sports
+- **resultado:** 18 | 1-4 | GOLES: (NOR) Erling Haaland 29', (IRA2) Aymen Hussein 39', (NOR) Erling Haaland 43', (NOR) Leo Østigard 76', (NOR) Kristian Thorstvedt 90+7' | CARDS: (IRA2) Zaid Tahseen 86' Y
 - **partido:** 19 | 22:00 | ARG | DZA | J | US-11 | DSports, Telefe, Disney+, TyC Sports, TV Pública
 
 ### Mié 17 jun 2026
