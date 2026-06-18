@@ -66,6 +66,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **resultado:** 22 | 4-2 | GOLES: (ING) Harry Kane 12' (P), (CRO) Martin Baturina 36', (ING) Harry Kane 42', (CRO) Petar Musa 45+5', (ING) Jude Bellingham 47', (ING) Marcus Rashford 85' | CARDS: Sin tarjetas registradas
 - **partido:** 23 | 20:00 | GHA | PAN | L | CA-01 | DSports, TyC Sports
 - **partido:** 24 | 23:00 | UZB | COL | K | MX-01 | DSports, Disney+
+- **resultado:** 24 | 1-3 | GOLES: (COL) Daniel Muñoz 40', (UZB) Abbosbek Fayzullaev 60', (COL) Luis Díaz 65', (COL) Jáminton Campaz 90+9' | CARDS: (UZB) Abdukodir Khusanov 34' Y
 
 ### Jue 18 jun 2026
 - **partido:** 25 | 13:00 | CHE | SUD | A | US-05 | DSports, TyC Sports
