@@ -74,6 +74,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 26 | 16:00 | SUI | BOS | B | US-02 | DSports, Telefe
 - **resultado:** 26 | 4-1 | GOLES: (SUI) Johan Manzambi 74', (SUI) Rubén Vargas 84', (SUI) Johan Manzambi 90', (BIH) Ermin Mahmic 90+3', (SUI) Granit Xhaka 90+7' (P) | CARDS: (BIH) Tarik Muharemović 80' R
 - **partido:** 27 | 19:00 | CAN | QAT | B | CA-02 | DSports
+- **resultado:** 27 | 6-0 | GOLES: (CAN) Cyle Larin 16', (CAN) Jonathan David 29', (CAN) Jonathan David 45+3', (CAN) Nathan Saliba 64', (QAT) Mohamed Manai 75' (EC), (CAN) Jonathan David 90+2' | CARDS: (QAT) Homam Ahmed 33' R, (QAT) Assim Madibo 53' R
 - **partido:** 28 | 22:00 | MEX | COR | A | MX-02 | DSports, TyC Sports
 
 ### Vie 19 jun 2026
