@@ -72,6 +72,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 25 | 13:00 | CHE | SUD | A | US-05 | DSports, TyC Sports
 - **resultado:** 25 | 1-1 | GOLES: (CHE) Michal Sadílek 6', (SUD) Teboho Mokoena 83' (P) | CARDS: (SUD) Teboho Mokoena 32' Y, (SUD) Thalente Mbatha 39' Y, (CHE) Ladislav Krejčí 75' Y
 - **partido:** 26 | 16:00 | SUI | BOS | B | US-02 | DSports, Telefe
+- **resultado:** 26 | 4-1 | GOLES: (SUI) Johan Manzambi 74', (SUI) Rubén Vargas 84', (SUI) Johan Manzambi 90', (BIH) Ermin Mahmic 90+3', (SUI) Granit Xhaka 90+7' (P) | CARDS: (BIH) Tarik Muharemović 80' R
 - **partido:** 27 | 19:00 | CAN | QAT | B | CA-02 | DSports
 - **partido:** 28 | 22:00 | MEX | COR | A | MX-02 | DSports, TyC Sports
 
