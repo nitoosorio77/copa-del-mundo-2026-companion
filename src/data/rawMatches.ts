@@ -70,6 +70,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Jue 18 jun 2026
 - **partido:** 25 | 13:00 | CHE | SUD | A | US-05 | DSports, TyC Sports
+- **resultado:** 25 | 1-1 | GOLES: (CHE) Michal Sadílek 6', (SUD) Teboho Mokoena 83' (P) | CARDS: (SUD) Teboho Mokoena 32' Y, (SUD) Thalente Mbatha 39' Y, (CHE) Ladislav Krejčí 75' Y
 - **partido:** 26 | 16:00 | SUI | BOS | B | US-02 | DSports, Telefe
 - **partido:** 27 | 19:00 | CAN | QAT | B | CA-02 | DSports
 - **partido:** 28 | 22:00 | MEX | COR | A | MX-02 | DSports, TyC Sports
