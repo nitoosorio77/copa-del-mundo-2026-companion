@@ -15,32 +15,34 @@ interface TournamentScorersPageProps {
 }
 
 export function TournamentScorersPage({ matches, teams, onChangeState }: TournamentScorersPageProps) {
-  const finishers = useMemo(() => {
+  const { finishers, matchesPlayedByTeam } = useMemo(() => {
     const scorersMap: { [key: string]: { name: string; teamId: string; goals: number } } = {};
+    const playedMap: { [teamId: string]: number } = {};
 
     matches.forEach(m => {
-      if (m.result && m.result.goals) {
-        m.result.goals.forEach(g => {
-          if (g.isOwnGoal) return;
-          
-          // Use a key that combines name and team for unique identification
-          const key = `${g.playerName}-${g.teamId}`;
-          if (!scorersMap[key]) {
-            scorersMap[key] = {
-              name: g.playerName,
-              teamId: g.teamId,
-              goals: 0
-            };
-          }
-          scorersMap[key].goals++;
-        });
+      if (m.result) {
+        playedMap[m.localId] = (playedMap[m.localId] || 0) + 1;
+        playedMap[m.visitorId] = (playedMap[m.visitorId] || 0) + 1;
+
+        if (m.result.goals) {
+          m.result.goals.forEach(g => {
+            if (g.isOwnGoal) return;
+            const key = `${g.playerName}-${g.teamId}`;
+            if (!scorersMap[key]) {
+              scorersMap[key] = { name: g.playerName, teamId: g.teamId, goals: 0 };
+            }
+            scorersMap[key].goals++;
+          });
+        }
       }
     });
 
-    return Object.values(scorersMap).sort((a, b) => {
+    const finishers = Object.values(scorersMap).sort((a, b) => {
       if (b.goals !== a.goals) return b.goals - a.goals;
       return a.name.localeCompare(b.name);
     });
+
+    return { finishers, matchesPlayedByTeam: playedMap };
   }, [matches]);
 
   return (
@@ -133,6 +135,7 @@ export function TournamentScorersPage({ matches, teams, onChangeState }: Tournam
                 <th className="py-4 pl-6 w-16">Pos</th>
                 <th className="py-4">Jugador</th>
                 <th className="py-4">Selección</th>
+                <th className="py-4 text-center w-20">PJ</th>
                 <th className="py-4 text-center font-mono w-24">Goles</th>
                 <th className="py-4 pr-6 w-16"></th>
               </tr>
@@ -176,6 +179,11 @@ export function TournamentScorersPage({ matches, teams, onChangeState }: Tournam
                       </div>
                     </td>
                     <td className="py-4 text-center">
+                      <span className="font-mono text-sm font-bold text-neutral-400">
+                        {matchesPlayedByTeam[player.teamId] ?? 0}
+                      </span>
+                    </td>
+                    <td className="py-4 text-center">
                       <div className="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-neutral-900 text-white font-mono text-xl font-black shadow-lg shadow-neutral-950/10">
                         {player.goals}
                       </div>
@@ -192,7 +200,7 @@ export function TournamentScorersPage({ matches, teams, onChangeState }: Tournam
                 );
               }) : (
                 <tr>
-                  <td colSpan={5} className="py-20 text-center">
+                  <td colSpan={6} className="py-20 text-center">
                     <div className="flex flex-col items-center justify-center space-y-3 opacity-30 grayscale">
                       <Goal className="h-12 w-12" />
                       <p className="font-sans font-bold text-neutral-500">Todavía no hay registros.</p>
