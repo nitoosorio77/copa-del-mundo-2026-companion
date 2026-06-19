@@ -76,6 +76,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 27 | 19:00 | CAN | QAT | B | CA-02 | DSports
 - **resultado:** 27 | 6-0 | GOLES: (CAN) Cyle Larin 16', (CAN) Jonathan David 29', (CAN) Jonathan David 45+3', (CAN) Nathan Saliba 64', (QAT) Mohamed Manai 75' (EC), (CAN) Jonathan David 90+2' | CARDS: (QAT) Homam Ahmed 33' R, (QAT) Assim Madibo 53' R
 - **partido:** 28 | 22:00 | MEX | COR | A | MX-02 | DSports, TyC Sports
+- **resultado:** 28 | 1-0 | GOLES: (MEX) Luis Romo 50' | CARDS: (COR) Lee Kang-in 4' Y, (COR) Seung-ho Paik 58' Y
 
 ### Vie 19 jun 2026
 - **partido:** 29 | 16:00 | USA | AUS | D | US-09 | DSports, TyC Sports
