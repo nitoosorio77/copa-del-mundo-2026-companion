@@ -61,20 +61,20 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 20 | 01:00 | AUT | JOR | J | US-10 | DSports, TyC Sports
 - **resultado:** 20 | 3-1 | GOLES: (AUT) Romano Schmid 21', (JOR) Ali Olwan 50', (JOR) Yazan Al-Arab 76' (EC), (AUT) Marko Arnautovic 102' (P) | CARDS: (AUT) Marcel Sabitzer 77' Y
 - **partido:** 21 | 14:00 | POR | RDC | K | US-04 | DSports
-- **resultado:** 21 | 1-1 | GOLES: (POR) João Neves 6', (RDC) Yoane Wissa 45+5' | CARDS: (RDC) Chancel Mbemba 32' Y, (POR) Bernardo Silva 45' Y, (POR) Nelson Semedo 88' Y, (POR) Tomás Araújo 90+2' Y
+- **resultado:** 21 | 1-1 | GOLES: (POR) João Neves 6', (RDC) Yoane Wissa 50' | CARDS: (RDC) Chancel Mbemba 32' Y, (POR) Bernardo Silva 45' Y, (POR) Nelson Semedo 88' Y, (POR) Tomás Araújo 90+2' Y
 - **partido:** 22 | 17:00 | ING | CRO | L | US-03 | DSports, Telefe, TyC Sports
-- **resultado:** 22 | 4-2 | GOLES: (ING) Harry Kane 12' (P), (CRO) Martin Baturina 36', (ING) Harry Kane 42', (CRO) Petar Musa 45+5', (ING) Jude Bellingham 47', (ING) Marcus Rashford 85' | CARDS: Sin tarjetas registradas
+- **resultado:** 22 | 4-2 | GOLES: (ING) Harry Kane 12' (P), (CRO) Martin Baturina 36', (ING) Harry Kane 42', (CRO) Petar Musa 50', (ING) Jude Bellingham 47', (ING) Marcus Rashford 85' | CARDS: Sin tarjetas registradas
 - **partido:** 23 | 20:00 | GHA | PAN | L | CA-01 | DSports, TyC Sports
 - **partido:** 24 | 23:00 | UZB | COL | K | MX-01 | DSports, Disney+
-- **resultado:** 24 | 1-3 | GOLES: (COL) Daniel Muñoz 40', (UZB) Abbosbek Fayzullaev 60', (COL) Luis Díaz 65', (COL) Jáminton Campaz 90+9' | CARDS: (UZB) Abdukodir Khusanov 34' Y
+- **resultado:** 24 | 1-3 | GOLES: (COL) Daniel Muñoz 40', (UZB) Abbosbek Fayzullaev 60', (COL) Luis Díaz 65', (COL) Jáminton Campaz 99' | CARDS: (UZB) Abdukodir Khusanov 34' Y
 
 ### Jue 18 jun 2026
 - **partido:** 25 | 13:00 | CHE | SUD | A | US-05 | DSports, TyC Sports
 - **resultado:** 25 | 1-1 | GOLES: (CHE) Michal Sadílek 6', (SUD) Teboho Mokoena 83' (P) | CARDS: (SUD) Teboho Mokoena 32' Y, (SUD) Thalente Mbatha 39' Y, (CHE) Ladislav Krejčí 75' Y
 - **partido:** 26 | 16:00 | SUI | BOS | B | US-02 | DSports, Telefe
-- **resultado:** 26 | 4-1 | GOLES: (SUI) Johan Manzambi 74', (SUI) Rubén Vargas 84', (SUI) Johan Manzambi 90', (BIH) Ermin Mahmic 90+3', (SUI) Granit Xhaka 90+7' (P) | CARDS: (BIH) Tarik Muharemović 80' R
+- **resultado:** 26 | 4-1 | GOLES: (SUI) Johan Manzambi 74', (SUI) Rubén Vargas 84', (SUI) Johan Manzambi 90', (BIH) Ermin Mahmic 93', (SUI) Granit Xhaka 97' (P) | CARDS: (BIH) Tarik Muharemović 80' R
 - **partido:** 27 | 19:00 | CAN | QAT | B | CA-02 | DSports
-- **resultado:** 27 | 6-0 | GOLES: (CAN) Cyle Larin 16', (CAN) Jonathan David 29', (CAN) Jonathan David 45+3', (CAN) Nathan Saliba 64', (QAT) Mohamed Manai 75' (EC), (CAN) Jonathan David 90+2' | CARDS: (QAT) Homam Ahmed 33' R, (QAT) Assim Madibo 53' R
+- **resultado:** 27 | 6-0 | GOLES: (CAN) Cyle Larin 16', (CAN) Jonathan David 29', (CAN) Jonathan David 48', (CAN) Nathan Saliba 64', (QAT) Mohamed Manai 75' (EC), (CAN) Jonathan David 92' | CARDS: (QAT) Homam Ahmed 33' R, (QAT) Assim Madibo 53' R
 - **partido:** 28 | 22:00 | MEX | COR | A | MX-02 | DSports, TyC Sports
 - **resultado:** 28 | 1-0 | GOLES: (MEX) Luis Romo 50' | CARDS: (COR) Lee Kang-in 4' Y, (COR) Seung-ho Paik 58' Y
 
