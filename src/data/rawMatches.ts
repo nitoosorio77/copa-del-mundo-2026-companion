@@ -82,11 +82,15 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 29 | 16:00 | USA | AUS | D | US-09 | DSports, TyC Sports
 - **resultado:** 29 | 2-0 | GOLES: (AUS) Cameron Burgess 11' (EC), (USA) Alex Freeman 43' | CARDS: (USA) A. Robinson 56' Y, (AUS) J. Italiano 89' Y, (USA) C. Richards 90+3' Y
 - **partido:** 30 | 19:00 | ESC | MAR | C | US-08 | DSports, Telefe, TyC Sports
+- **resultado:** 30 | 0-1 | GOLES: (MAR) Ismael Saibari 2' | CARDS: Sin tarjetas registradas
 - **partido:** 31 | 22:00 | BRA | HAI | C | US-07 | DSports, Telefe, TyC Sports
+- **resultado:** 31 | 3-0 | GOLES: (BRA) Matheus Cunha 23', (BRA) Matheus Cunha 36', (BRA) Vinícius Júnior 45+3' | CARDS: (HAI) Carlens Arcus 4' Y, (BRA) Douglas Santos 16' Y, (HAI) Frantzdy Pierrot 45+4' Y, (BRA) Douglas Santos 65' R, (HAI) Danley Jean Jacques 72' Y
 
 ### Sáb 20 jun 2026
 - **partido:** 32 | 01:00 | TUR | PAR | D | US-10 | DSports
+- **resultado:** 32 | 0-1 | GOLES: (PAR) Matías Galarza 2' | CARDS: (PAR) Miguel Almirón 45+3' R
 - **partido:** 33 | 14:00 | HOL | SUE | F | US-04 | DSports, TyC Sports
+- **resultado:** 33 | 5-1 | GOLES: (HOL) Brian Brobbey 5', (HOL) Brian Brobbey 17', (HOL) Cody Gakpo 47', (HOL) Cody Gakpo 54', (SUE) Anthony Elanga 59', (HOL) Crysencio Summerville 89' | CARDS: (SUE) Gabriel Gudmundsson 53' Y, (SUE) Yasin Ayari 78' Y, (SUE) Lucas Bergvall 80' Y
 - **partido:** 34 | 17:00 | ALE | CIV | E | CA-01 | DSports, Telefe, TyC Sports
 - **partido:** 35 | 21:00 | CUR | ECU | E | US-11 | DSports, Disney+
 
