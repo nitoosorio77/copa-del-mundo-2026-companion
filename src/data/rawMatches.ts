@@ -80,6 +80,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Vie 19 jun 2026
 - **partido:** 29 | 16:00 | USA | AUS | D | US-09 | DSports, TyC Sports
+- **resultado:** 29 | 2-0 | GOLES: (AUS) Cameron Burgess 11' (EC), (USA) Alex Freeman 43' | CARDS: (USA) A. Robinson 56' Y, (AUS) J. Italiano 89' Y, (USA) C. Richards 90+3' Y
 - **partido:** 30 | 19:00 | ESC | MAR | C | US-08 | DSports, Telefe, TyC Sports
 - **partido:** 31 | 22:00 | BRA | HAI | C | US-07 | DSports, Telefe, TyC Sports
 
