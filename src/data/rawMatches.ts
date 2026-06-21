@@ -94,6 +94,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 34 | 17:00 | ALE | CIV | E | CA-01 | DSports, Telefe, TyC Sports
 - **resultado:** 34 | 2-1 | GOLES: (CIV) Franck Kessié 30', (ALE) Deniz Undav 68', (ALE) Deniz Undav 90+4' | CARDS: Sin tarjetas registradas
 - **partido:** 35 | 21:00 | CUR | ECU | E | US-11 | DSports, Disney+
+- **resultado:** 35 | 0-0 | GOLES: Sin goles | CARDS: (CUR) Gervane Kastaneer 90+1' Y
 
 ### Dom 21 jun 2026
 - **partido:** 36 | 01:00 | JAP | TUN | F | MX-03 | DSports
