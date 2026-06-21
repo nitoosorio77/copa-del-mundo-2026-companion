@@ -92,6 +92,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 33 | 14:00 | HOL | SUE | F | US-04 | DSports, TyC Sports
 - **resultado:** 33 | 5-1 | GOLES: (HOL) Brian Brobbey 5', (HOL) Brian Brobbey 17', (HOL) Cody Gakpo 47', (HOL) Cody Gakpo 54', (SUE) Anthony Elanga 59', (HOL) Crysencio Summerville 89' | CARDS: (SUE) Gabriel Gudmundsson 53' Y, (SUE) Yasin Ayari 78' Y, (SUE) Lucas Bergvall 80' Y
 - **partido:** 34 | 17:00 | ALE | CIV | E | CA-01 | DSports, Telefe, TyC Sports
+- **resultado:** 34 | 2-1 | GOLES: (CIV) Franck Kessié 30', (ALE) Deniz Undav 68', (ALE) Deniz Undav 90+4' | CARDS: Sin tarjetas registradas
 - **partido:** 35 | 21:00 | CUR | ECU | E | US-11 | DSports, Disney+
 
 ### Dom 21 jun 2026
