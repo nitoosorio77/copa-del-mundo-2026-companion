@@ -65,6 +65,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 22 | 17:00 | ING | CRO | L | US-03 | DSports, Telefe, TyC Sports
 - **resultado:** 22 | 4-2 | GOLES: (ING) Harry Kane 12' (P), (CRO) Martin Baturina 36', (ING) Harry Kane 42', (CRO) Petar Musa 50', (ING) Jude Bellingham 47', (ING) Marcus Rashford 85' | CARDS: Sin tarjetas registradas
 - **partido:** 23 | 20:00 | GHA | PAN | L | CA-01 | DSports, TyC Sports
+- **resultado:** 23 | 1-0 | GOLES: (GHA) Caleb Yirenkyi 90+5' | CARDS: Sin tarjetas registradas
 - **partido:** 24 | 23:00 | UZB | COL | K | MX-01 | DSports, Disney+
 - **resultado:** 24 | 1-3 | GOLES: (COL) Daniel Muñoz 40', (UZB) Abbosbek Fayzullaev 60', (COL) Luis Díaz 65', (COL) Jáminton Campaz 99' | CARDS: (UZB) Abdukodir Khusanov 34' Y
 
@@ -98,18 +99,27 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Dom 21 jun 2026
 - **partido:** 36 | 01:00 | JAP | TUN | F | MX-03 | DSports
+- **resultado:** 36 | 4-0 | GOLES: (JAP) Daichi Kamada 4', (JAP) Ayase Ueda 31', (JAP) Junya Ito 69', (JAP) Ayase Ueda 83' | CARDS: Sin tarjetas registradas
 - **partido:** 37 | 13:00 | ESP | ARS | H | US-05 | DSports, Telefe, TyC Sports
+- **resultado:** 37 | 4-0 | GOLES: (ESP) Lamine Yamal 10', (ESP) Mikel Oyarzabal 21', (ESP) Mikel Oyarzabal 24', (ARS) Ziyad Al-Tambakti 49' (EC) | CARDS: Sin tarjetas registradas
 - **partido:** 38 | 16:00 | BEL | IRA | G | US-02 | DSports
+- **resultado:** 38 | 0-0 | GOLES: Sin goles | CARDS: (BEL) N. Ngoy 66' R
 - **partido:** 39 | 19:00 | CAB | URU | H | US-06 | DSports, Telefe, Disney+
+- **resultado:** 39 | 2-2 | GOLES: (CAB) K. Pina 21', (URU) Maximiliano Araújo 44', (URU) Agustín Canobbio 45+6', (CAB) H. Varela 61' | CARDS: Sin tarjetas registradas
 - **partido:** 40 | 22:00 | EGI | NZL | G | CA-02 | DSports, TyC Sports
+- **resultado:** 40 | 3-1 | GOLES: (NZL) Fin Surman 15', (EGI) Mohamed Zico 58', (EGI) Mohamed Salah 67', (EGI) Trézéguet 82' | CARDS: Sin tarjetas registradas
 
 ### Lun 22 jun 2026
 - **partido:** 41 | 14:00 | ARG | AUT | J | US-03 | DSports, Telefe, Disney+, TyC Sports, TV Pública
+- **resultado:** 41 | 2-0 | GOLES: (ARG) Lionel Messi 38', (ARG) Lionel Messi 90+5' | CARDS: Sin tarjetas registradas
 - **partido:** 42 | 18:00 | FRA | IRA2 | I | US-07 | DSports
+- **resultado:** 42 | 3-0 | GOLES: (FRA) Kylian Mbappé 14', (FRA) Kylian Mbappé 54', (FRA) Ousmane Dembélé 66' | CARDS: Sin tarjetas registradas
 - **partido:** 43 | 21:00 | NOR | SEN | I | US-01 | DSports, TyC Sports
+- **resultado:** 43 | 3-2 | GOLES: (NOR) Marcus Holmgren Pedersen 43', (NOR) Erling Haaland 48', (SEN) Ismaila Sarr 53', (NOR) Erling Haaland 58', (SEN) Ismaila Sarr 90+3' | CARDS: Sin tarjetas registradas
 
 ### Mar 23 jun 2026
 - **partido:** 44 | 00:00 | JOR | DZA | J | US-10 | DSports
+- **resultado:** 44 | 1-2 | GOLES: (JOR) Nizar Al-Rashdan 36', (DZA) Nadhir Benbouali 69', (DZA) Amine Gouiri 82' | CARDS: Sin tarjetas registradas
 - **partido:** 45 | 14:00 | POR | UZB | K | US-04 | DSports, Telefe, TyC Sports
 - **partido:** 46 | 17:00 | ING | GHA | L | US-08 | DSports, Telefe, TyC Sports
 - **partido:** 47 | 20:00 | CRO | PAN | L | CA-01 | DSports, TyC Sports
