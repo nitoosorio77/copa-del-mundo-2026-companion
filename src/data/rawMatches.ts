@@ -65,7 +65,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 22 | 17:00 | ING | CRO | L | US-03 | DSports, Telefe, TyC Sports
 - **resultado:** 22 | 4-2 | GOLES: (ING) Harry Kane 12' (P), (CRO) Martin Baturina 36', (ING) Harry Kane 42', (CRO) Petar Musa 50', (ING) Jude Bellingham 47', (ING) Marcus Rashford 85' | CARDS: Sin tarjetas registradas
 - **partido:** 23 | 20:00 | GHA | PAN | L | CA-01 | DSports, TyC Sports
-- **resultado:** 23 | 1-0 | GOLES: (GHA) Caleb Yirenkyi 90+5' | CARDS: Sin tarjetas registradas
+- **resultado:** 23 | 1-0 | GOLES: (GHA) Caleb Yirenkyi 95' | CARDS: Sin tarjetas registradas
 - **partido:** 24 | 23:00 | UZB | COL | K | MX-01 | DSports, Disney+
 - **resultado:** 24 | 1-3 | GOLES: (COL) Daniel Muñoz 40', (UZB) Abbosbek Fayzullaev 60', (COL) Luis Díaz 65', (COL) Jáminton Campaz 99' | CARDS: (UZB) Abdukodir Khusanov 34' Y
 
@@ -85,7 +85,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 30 | 19:00 | ESC | MAR | C | US-08 | DSports, Telefe, TyC Sports
 - **resultado:** 30 | 0-1 | GOLES: (MAR) Ismael Saibari 2' | CARDS: Sin tarjetas registradas
 - **partido:** 31 | 22:00 | BRA | HAI | C | US-07 | DSports, Telefe, TyC Sports
-- **resultado:** 31 | 3-0 | GOLES: (BRA) Matheus Cunha 23', (BRA) Matheus Cunha 36', (BRA) Vinícius Júnior 45+3' | CARDS: (HAI) Carlens Arcus 4' Y, (BRA) Douglas Santos 16' Y, (HAI) Frantzdy Pierrot 45+4' Y, (BRA) Douglas Santos 65' R, (HAI) Danley Jean Jacques 72' Y
+- **resultado:** 31 | 3-0 | GOLES: (BRA) Matheus Cunha 23', (BRA) Matheus Cunha 36', (BRA) Vinícius Júnior 48' | CARDS: (HAI) Carlens Arcus 4' Y, (BRA) Douglas Santos 16' Y, (HAI) Frantzdy Pierrot 45+4' Y, (BRA) Douglas Santos 65' R, (HAI) Danley Jean Jacques 72' Y
 
 ### Sáb 20 jun 2026
 - **partido:** 32 | 01:00 | TUR | PAR | D | US-10 | DSports
@@ -93,7 +93,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 33 | 14:00 | HOL | SUE | F | US-04 | DSports, TyC Sports
 - **resultado:** 33 | 5-1 | GOLES: (HOL) Brian Brobbey 5', (HOL) Brian Brobbey 17', (HOL) Cody Gakpo 47', (HOL) Cody Gakpo 54', (SUE) Anthony Elanga 59', (HOL) Crysencio Summerville 89' | CARDS: (SUE) Gabriel Gudmundsson 53' Y, (SUE) Yasin Ayari 78' Y, (SUE) Lucas Bergvall 80' Y
 - **partido:** 34 | 17:00 | ALE | CIV | E | CA-01 | DSports, Telefe, TyC Sports
-- **resultado:** 34 | 2-1 | GOLES: (CIV) Franck Kessié 30', (ALE) Deniz Undav 68', (ALE) Deniz Undav 90+4' | CARDS: Sin tarjetas registradas
+- **resultado:** 34 | 2-1 | GOLES: (CIV) Franck Kessié 30', (ALE) Deniz Undav 68', (ALE) Deniz Undav 94' | CARDS: Sin tarjetas registradas
 - **partido:** 35 | 21:00 | CUR | ECU | E | US-11 | DSports, Disney+
 - **resultado:** 35 | 0-0 | GOLES: Sin goles | CARDS: (CUR) Gervane Kastaneer 90+1' Y
 
@@ -105,17 +105,17 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 38 | 16:00 | BEL | IRA | G | US-02 | DSports
 - **resultado:** 38 | 0-0 | GOLES: Sin goles | CARDS: (BEL) N. Ngoy 66' R
 - **partido:** 39 | 19:00 | CAB | URU | H | US-06 | DSports, Telefe, Disney+
-- **resultado:** 39 | 2-2 | GOLES: (CAB) K. Pina 21', (URU) Maximiliano Araújo 44', (URU) Agustín Canobbio 45+6', (CAB) H. Varela 61' | CARDS: Sin tarjetas registradas
+- **resultado:** 39 | 2-2 | GOLES: (CAB) K. Pina 21', (URU) Maximiliano Araújo 44', (URU) Agustín Canobbio 51', (CAB) H. Varela 61' | CARDS: Sin tarjetas registradas
 - **partido:** 40 | 22:00 | EGI | NZL | G | CA-02 | DSports, TyC Sports
 - **resultado:** 40 | 3-1 | GOLES: (NZL) Fin Surman 15', (EGI) Mohamed Zico 58', (EGI) Mohamed Salah 67', (EGI) Trézéguet 82' | CARDS: Sin tarjetas registradas
 
 ### Lun 22 jun 2026
 - **partido:** 41 | 14:00 | ARG | AUT | J | US-03 | DSports, Telefe, Disney+, TyC Sports, TV Pública
-- **resultado:** 41 | 2-0 | GOLES: (ARG) Lionel Messi 38', (ARG) Lionel Messi 90+5' | CARDS: Sin tarjetas registradas
+- **resultado:** 41 | 2-0 | GOLES: (ARG) Lionel Messi 38', (ARG) Lionel Messi 95' | CARDS: Sin tarjetas registradas
 - **partido:** 42 | 18:00 | FRA | IRA2 | I | US-07 | DSports
 - **resultado:** 42 | 3-0 | GOLES: (FRA) Kylian Mbappé 14', (FRA) Kylian Mbappé 54', (FRA) Ousmane Dembélé 66' | CARDS: Sin tarjetas registradas
 - **partido:** 43 | 21:00 | NOR | SEN | I | US-01 | DSports, TyC Sports
-- **resultado:** 43 | 3-2 | GOLES: (NOR) Marcus Holmgren Pedersen 43', (NOR) Erling Haaland 48', (SEN) Ismaila Sarr 53', (NOR) Erling Haaland 58', (SEN) Ismaila Sarr 90+3' | CARDS: Sin tarjetas registradas
+- **resultado:** 43 | 3-2 | GOLES: (NOR) Marcus Holmgren Pedersen 43', (NOR) Erling Haaland 48', (SEN) Ismaila Sarr 53', (NOR) Erling Haaland 58', (SEN) Ismaila Sarr 93' | CARDS: Sin tarjetas registradas
 
 ### Mar 23 jun 2026
 - **partido:** 44 | 00:00 | JOR | DZA | J | US-10 | DSports
