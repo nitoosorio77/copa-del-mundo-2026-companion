@@ -121,9 +121,13 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 44 | 00:00 | JOR | DZA | J | US-10 | DSports
 - **resultado:** 44 | 1-2 | GOLES: (JOR) Nizar Al-Rashdan 36', (DZA) Nadhir Benbouali 69', (DZA) Amine Gouiri 82' | CARDS: Sin tarjetas registradas
 - **partido:** 45 | 14:00 | POR | UZB | K | US-04 | DSports, Telefe, TyC Sports
+- **resultado:** 45 | 5-0 | GOLES: (POR) Cristiano Ronaldo 6', (POR) Nuno Mendes 17', (POR) Cristiano Ronaldo 39', (UZB) Abduvohid Nematov 60' (EC), (POR) Rafael Leão 87' | CARDS: (UZB) Oybek Xamrobekov 14' Y, (POR) Ricardo Veiga 68' Y
 - **partido:** 46 | 17:00 | ING | GHA | L | US-08 | DSports, Telefe, TyC Sports
+- **resultado:** 46 | 0-0 | GOLES: Sin goles | CARDS: (ING) Declan Rice 41' Y, (GHA) Iñaki Williams 60' Y
 - **partido:** 47 | 20:00 | CRO | PAN | L | CA-01 | DSports, TyC Sports
+- **resultado:** 47 | 1-0 | GOLES: (CRO) Ante Budimir 54' | CARDS: (PAN) Yoel Bárcenas 61' Y, (CRO) Petar Sučić 72' Y
 - **partido:** 48 | 23:00 | RDC | COL | K | MX-02 | DSports, Disney+
+- **resultado:** 48 | 0-1 | GOLES: (COL) Daniel Muñoz 76' | CARDS: (COL) Jhon Lucumí 56' Y, (RDC) Charles Pickel 72' Y, (RDC) Charles Pickel 89' R, (COL) Jefferson Lerma 90+4' Y
 
 ### Mié 24 jun 2026
 - **partido:** 49 | 16:00 | SUI | CAN | B | CA-02 | DSports, TyC Sports
