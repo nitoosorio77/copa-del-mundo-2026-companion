@@ -131,15 +131,23 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mié 24 jun 2026
 - **partido:** 49 | 16:00 | SUI | CAN | B | CA-02 | DSports, TyC Sports
+- **resultado:** 49 | 2-1 | GOLES: (SUI) Rubén Vargas 46', (SUI) Johan Manzambi 57', (CAN) Promise David 76' | CARDS: (CAN) Cyle Larin 31' Y, (SUI) Granit Xhaka 31' Y, (CAN) Liam Millar 87' Y
 - **partido:** 50 | 16:00 | BOS | QAT | B | US-09 | DSports
+- **resultado:** 50 | 3-1 | GOLES: (BOS) Kerim Alajbegović 29', (QAT) Sultan Al-Brake 34' (EC), (QAT) Hassan Al-Haydos 42', (BOS) Ermin Mahmić 80' | CARDS: (QAT) Ahmed Fathy 78' Y, (BOS) Ermin Mahmić 82' Y
 - **partido:** 51 | 19:00 | ESC | BRA | C | US-06 | DSports, Telefe
+- **resultado:** 51 | 0-3 | GOLES: (BRA) Vinícius Júnior 7', (BRA) Vinícius Júnior 45+2', (BRA) Matheus Cunha 60' | CARDS: (BRA) Danilo 62' Y, (BRA) Fabinho 82' Y, (ESC) Ryan Christie 82' Y
 - **partido:** 52 | 19:00 | MAR | HAI | C | US-05 | DSports, TyC Sports
+- **resultado:** 52 | 4-2 | GOLES: (MAR) Yassine Bounou 10' (EC), (MAR) Achraf Hakimi 39', (HAI) Wilson Isidor 43', (MAR) Ismael Saibari 45+1', (MAR) Soufiane Rahimi 78', (MAR) Gessime Yassine 89' | CARDS: (HAI) Duckens Nazon 79' Y, (HAI) Josue Casimir 90+2' Y
 - **partido:** 53 | 22:00 | CHE | MEX | A | MX-01 | DSports
+- **resultado:** 53 | 0-3 | GOLES: (MEX) Mateo Chávez 55', (MEX) Julián Quiñones 61', (MEX) Álvaro Fidalgo 90+3' | CARDS: (MEX) Edson Álvarez 64' Y
 - **partido:** 54 | 22:00 | SUD | COR | A | MX-03 | DSports, TyC Sports
+- **resultado:** 54 | 1-0 | GOLES: (SUD) Thapelo Maseko 63' | CARDS: (SUD) Aubrey Modiba 73' Y, (COR) Cho Gue-sung 74' Y
 
 ### Jue 25 jun 2026
 - **partido:** 55 | 17:00 | ECU | ALE | E | US-01 | DSports, Telefe, Disney+, TyC Sports
+- **resultado:** 55 | 2-1 | GOLES: (ALE) Leroy Sané 2', (ECU) Nilson Angulo 9', (ECU) Gonzalo Plata 77' | CARDS: (ALE) Leroy Sané 19' Y, (ALE) Aleksandar Pavlović 45' Y, (ECU) Alan Franco 63' Y, (ECU) Piero Hincapié 70' Y, (ECU) Gonzalo Plata 89' Y
 - **partido:** 56 | 17:00 | CUR | CIV | E | US-07 | DSports
+- **resultado:** 56 | 0-2 | GOLES: (CIV) Nicolas Pépé 7', (CIV) Nicolas Pépé 64' | CARDS: Sin tarjetas registradas
 - **partido:** 57 | 20:00 | TUN | HOL | F | US-11 | DSports
 - **partido:** 58 | 20:00 | JAP | SUE | F | US-03 | DSports, TyC Sports
 - **partido:** 59 | 23:00 | TUR | USA | D | US-02 | DSports
