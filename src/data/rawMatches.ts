@@ -135,11 +135,11 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 50 | 16:00 | BOS | QAT | B | US-09 | DSports
 - **resultado:** 50 | 3-1 | GOLES: (BOS) Kerim Alajbegović 29', (QAT) Sultan Al-Brake 34' (EC), (QAT) Hassan Al-Haydos 42', (BOS) Ermin Mahmić 80' | CARDS: (QAT) Ahmed Fathy 78' Y, (BOS) Ermin Mahmić 82' Y
 - **partido:** 51 | 19:00 | ESC | BRA | C | US-06 | DSports, Telefe
-- **resultado:** 51 | 0-3 | GOLES: (BRA) Vinícius Júnior 7', (BRA) Vinícius Júnior 45+2', (BRA) Matheus Cunha 60' | CARDS: (BRA) Danilo 62' Y, (BRA) Fabinho 82' Y, (ESC) Ryan Christie 82' Y
+- **resultado:** 51 | 0-3 | GOLES: (BRA) Vinícius Júnior 7', (BRA) Vinícius Júnior 47', (BRA) Matheus Cunha 60' | CARDS: (BRA) Danilo 62' Y, (BRA) Fabinho 82' Y, (ESC) Ryan Christie 82' Y
 - **partido:** 52 | 19:00 | MAR | HAI | C | US-05 | DSports, TyC Sports
-- **resultado:** 52 | 4-2 | GOLES: (MAR) Yassine Bounou 10' (EC), (MAR) Achraf Hakimi 39', (HAI) Wilson Isidor 43', (MAR) Ismael Saibari 45+1', (MAR) Soufiane Rahimi 78', (MAR) Gessime Yassine 89' | CARDS: (HAI) Duckens Nazon 79' Y, (HAI) Josue Casimir 90+2' Y
+- **resultado:** 52 | 4-2 | GOLES: (MAR) Yassine Bounou 10' (EC), (MAR) Achraf Hakimi 39', (HAI) Wilson Isidor 43', (MAR) Ismael Saibari 46', (MAR) Soufiane Rahimi 78', (MAR) Gessime Yassine 89' | CARDS: (HAI) Duckens Nazon 79' Y, (HAI) Josue Casimir 90+2' Y
 - **partido:** 53 | 22:00 | CHE | MEX | A | MX-01 | DSports
-- **resultado:** 53 | 0-3 | GOLES: (MEX) Mateo Chávez 55', (MEX) Julián Quiñones 61', (MEX) Álvaro Fidalgo 90+3' | CARDS: (MEX) Edson Álvarez 64' Y
+- **resultado:** 53 | 0-3 | GOLES: (MEX) Mateo Chávez 55', (MEX) Julián Quiñones 61', (MEX) Álvaro Fidalgo 93' | CARDS: (MEX) Edson Álvarez 64' Y
 - **partido:** 54 | 22:00 | SUD | COR | A | MX-03 | DSports, TyC Sports
 - **resultado:** 54 | 1-0 | GOLES: (SUD) Thapelo Maseko 63' | CARDS: (SUD) Aubrey Modiba 73' Y, (COR) Cho Gue-sung 74' Y
 
@@ -153,7 +153,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 58 | 20:00 | JAP | SUE | F | US-03 | DSports, TyC Sports
 - **resultado:** 58 | 1-1 | GOLES: (JAP) Daizen Maeda 56', (SUE) Anthony Elanga 62' | CARDS: (SUE) Isak Hien 32' Y, (JAP) Shogo Taniguchi 39' Y, (JAP) Shogo Taniguchi 77' R, (SUE) Viktor Gyökeres 85' Y
 - **partido:** 59 | 23:00 | TUR | USA | D | US-02 | DSports
-- **resultado:** 59 | 3-2 | GOLES: (USA) Auston Trusty 3', (TUR) Arda Güler 10', (TUR) Barış Alper Yılmaz 31', (USA) Sebastian Berhalter 49', (TUR) Kaan Ayhan 90+8' | CARDS: (USA) Sebastian Berhalter 19' Y
+- **resultado:** 59 | 3-2 | GOLES: (USA) Auston Trusty 3', (TUR) Arda Güler 10', (TUR) Barış Alper Yılmaz 31', (USA) Sebastian Berhalter 49', (TUR) Kaan Ayhan 98' | CARDS: (USA) Sebastian Berhalter 19' Y
 - **partido:** 60 | 23:00 | PAR | AUS | D | US-10 | DSports, Telefe, TyC Sports
 - **resultado:** 60 | 0-0 | GOLES: Sin goles | CARDS: (AUS) Jackson Irvine 46' Y, (PAR) Diego Gómez 77' Y
 
