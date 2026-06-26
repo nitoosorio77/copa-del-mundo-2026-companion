@@ -147,11 +147,15 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 55 | 17:00 | ECU | ALE | E | US-01 | DSports, Telefe, Disney+, TyC Sports
 - **resultado:** 55 | 2-1 | GOLES: (ALE) Leroy Sané 2', (ECU) Nilson Angulo 9', (ECU) Gonzalo Plata 77' | CARDS: (ALE) Leroy Sané 19' Y, (ALE) Aleksandar Pavlović 45' Y, (ECU) Alan Franco 63' Y, (ECU) Piero Hincapié 70' Y, (ECU) Gonzalo Plata 89' Y
 - **partido:** 56 | 17:00 | CUR | CIV | E | US-07 | DSports
-- **resultado:** 56 | 0-2 | GOLES: (CIV) Nicolas Pépé 7', (CIV) Nicolas Pépé 64' | CARDS: Sin tarjetas registradas
+- **resultado:** 56 | 0-2 | GOLES: (CIV) Nicolas Pépé 7', (CIV) Nicolas Pépé 64' | CARDS: (CIV) Nicolas Pépé 35' Y, (CUR) Juninho Bacuna 75' Y, (CUR) Gervane Kastaneer 83' Y
 - **partido:** 57 | 20:00 | TUN | HOL | F | US-11 | DSports
+- **resultado:** 57 | 1-3 | GOLES: (TUN) Ellyes Skhiri 3' (EC), (HOL) Brian Brobbey 7', (TUN) Hazem Mastouri 54', (HOL) Jan-Paul van Hecke 62' | CARDS: Sin tarjetas registradas
 - **partido:** 58 | 20:00 | JAP | SUE | F | US-03 | DSports, TyC Sports
+- **resultado:** 58 | 1-1 | GOLES: (JAP) Daizen Maeda 56', (SUE) Anthony Elanga 62' | CARDS: (SUE) Isak Hien 32' Y, (JAP) Shogo Taniguchi 39' Y, (JAP) Shogo Taniguchi 77' R, (SUE) Viktor Gyökeres 85' Y
 - **partido:** 59 | 23:00 | TUR | USA | D | US-02 | DSports
+- **resultado:** 59 | 3-2 | GOLES: (USA) Auston Trusty 3', (TUR) Arda Güler 10', (TUR) Barış Alper Yılmaz 31', (USA) Sebastian Berhalter 49', (TUR) Kaan Ayhan 90+8' | CARDS: (USA) Sebastian Berhalter 19' Y
 - **partido:** 60 | 23:00 | PAR | AUS | D | US-10 | DSports, Telefe, TyC Sports
+- **resultado:** 60 | 0-0 | GOLES: Sin goles | CARDS: (AUS) Jackson Irvine 46' Y, (PAR) Diego Gómez 77' Y
 
 ### Vie 26 jun 2026
 - **partido:** 61 | 16:00 | NOR | FRA | I | US-08 | DSports, Telefe, TyC Sports
