@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useMemo } from "react";
-import { Award, TrendingUp, Users, ChevronRight, Goal } from "lucide-react";
+import React, { useMemo, useState } from "react";
+import { Award, TrendingUp, Users, ChevronRight, Goal, ArrowDownUp } from "lucide-react";
 import { Match, Team, AppState } from "../types";
 import { Flag } from "./Flag";
 
@@ -44,6 +44,19 @@ export function TournamentScorersPage({ matches, teams, onChangeState }: Tournam
 
     return { finishers, matchesPlayedByTeam: playedMap };
   }, [matches]);
+
+  const [sortBy, setSortBy] = useState<"goals" | "team">("goals");
+
+  const sortedFinishers = useMemo(() => {
+    if (sortBy === "goals") return finishers;
+    return [...finishers].sort((a, b) => {
+      const teamA = teams.find(t => t.id === a.teamId)?.name ?? a.teamId;
+      const teamB = teams.find(t => t.id === b.teamId)?.name ?? b.teamId;
+      const cmp = teamA.localeCompare(teamB);
+      if (cmp !== 0) return cmp;
+      return b.goals - a.goals;
+    });
+  }, [finishers, sortBy, teams]);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
@@ -128,32 +141,65 @@ export function TournamentScorersPage({ matches, teams, onChangeState }: Tournam
 
       {/* MAIN TABLE */}
       <div className="rounded-3xl border border-neutral-200/50 bg-white shadow-xs overflow-hidden">
+        <div className="flex items-center gap-2 px-6 pt-4 pb-2">
+          <ArrowDownUp className="h-3.5 w-3.5 text-neutral-400 shrink-0" />
+          <span className="text-[10px] font-black text-neutral-400 uppercase tracking-widest mr-2">Ordenar por</span>
+          <button
+            onClick={() => setSortBy("goals")}
+            className={`px-3 py-1 rounded-full text-[11px] font-bold transition-colors ${
+              sortBy === "goals"
+                ? "bg-rose-500 text-white"
+                : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+            }`}
+          >
+            Goles
+          </button>
+          <button
+            onClick={() => setSortBy("team")}
+            className={`px-3 py-1 rounded-full text-[11px] font-bold transition-colors ${
+              sortBy === "team"
+                ? "bg-rose-500 text-white"
+                : "bg-neutral-100 text-neutral-500 hover:bg-neutral-200"
+            }`}
+          >
+            Selección
+          </button>
+        </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left font-sans text-sm border-collapse">
             <thead>
               <tr className="bg-neutral-50/50 border-b border-neutral-100 text-[10px] font-black text-neutral-400 uppercase tracking-widest">
-                <th className="py-4 pl-6 w-16">Pos</th>
+                <th className="py-4 pl-6 w-16">{sortBy === "goals" ? "Pos" : "#"}</th>
                 <th className="py-4">Jugador</th>
-                <th className="py-4">Selección</th>
+                <th
+                  className="py-4 cursor-pointer hover:text-rose-500 transition-colors select-none"
+                  onClick={() => setSortBy(sortBy === "team" ? "goals" : "team")}
+                >
+                  <span className="flex items-center gap-1">
+                    Selección
+                    {sortBy === "team" && <ArrowDownUp className="h-3 w-3 text-rose-500" />}
+                  </span>
+                </th>
                 <th className="py-4 text-center w-20">PJ</th>
                 <th className="py-4 text-center font-mono w-24">Goles</th>
                 <th className="py-4 pr-6 w-16"></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-neutral-100/60">
-              {finishers.length > 0 ? finishers.map((player, idx) => {
+              {sortedFinishers.length > 0 ? sortedFinishers.map((player, idx) => {
                 const team = teams.find(t => t.id === player.teamId);
-                const isLeader = idx === 0;
+                const goalRank = finishers.indexOf(player);
+                const isLeader = goalRank === 0;
 
                 return (
-                  <tr key={idx} className="group hover:bg-neutral-50/50 transition-all duration-200">
+                  <tr key={`${player.teamId}-${player.name}`} className="group hover:bg-neutral-50/50 transition-all duration-200">
                     <td className="py-4 pl-6">
                       <div className={`flex h-7 w-7 items-center justify-center rounded-lg font-mono text-xs font-bold ${
-                        isLeader 
-                          ? "bg-rose-500 text-white shadow-md shadow-rose-500/20" 
+                        isLeader
+                          ? "bg-rose-500 text-white shadow-md shadow-rose-500/20"
                           : "bg-neutral-100 text-neutral-500"
                       }`}>
-                        {idx + 1}
+                        {sortBy === "goals" ? idx + 1 : goalRank + 1}
                       </div>
                     </td>
                     <td className="py-4">
@@ -200,7 +246,7 @@ export function TournamentScorersPage({ matches, teams, onChangeState }: Tournam
                 );
               }) : (
                 <tr>
-                  <td colSpan={6} className="py-20 text-center">
+                  <td colSpan={7} className="py-20 text-center">
                     <div className="flex flex-col items-center justify-center space-y-3 opacity-30 grayscale">
                       <Goal className="h-12 w-12" />
                       <p className="font-sans font-bold text-neutral-500">Todavía no hay registros.</p>
