@@ -159,9 +159,13 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Vie 26 jun 2026
 - **partido:** 61 | 16:00 | NOR | FRA | I | US-08 | DSports, Telefe, TyC Sports
+- **resultado:** 61 | 1-4 | GOLES: (FRA) Ousmane Dembélé 7', (FRA) Ousmane Dembélé 20', (NOR) Thelo Aasgaard 21', (FRA) Ousmane Dembélé 32', (FRA) Désiré Doué 90+4' | CARDS: (NOR) Patrick Berg 10' Y, (FRA) Aurélien Tchouaméni 74' Y
 - **partido:** 62 | 16:00 | SEN | IRA2 | I | CA-01 | DSports
+- **resultado:** 62 | 5-0 | GOLES: (SEN) Habib Diarra 4', (SEN) Ismaila Sarr 56', (SEN) Pape Gueye 59', (SEN) Pape Gueye 71', (SEN) Iliman Ndiaye 82' | CARDS: (IRA2) Rebin Sulaka 13' R, (SEN) Abdoulaye Seck 18' Y, (IRA2) Amir Alammari 75' Y, (SEN) Pape Gueye 81' Y, (IRA2) Merchas Doski 90' Y
 - **partido:** 63 | 21:00 | URU | ESP | H | MX-02 | DSports, Telefe, Disney+, TyC Sports
+- **resultado:** 63 | 0-1 | GOLES: (ESP) Álex Baena 42' | CARDS: (ESP) Álex Baena 46' Y, (URU) Juan Sanabria 54' Y, (URU) Guillermo Varela 58' Y, (URU) Nicolás de la Cruz 90+3' Y, (URU) Agustín Canobbio 90+4' R
 - **partido:** 64 | 21:00 | CAB | ARS | H | US-04 | DSports
+- **resultado:** 64 | 0-0 | GOLES: Sin goles | CARDS: (ARS) Saud Abdulhamid 4' Y, (CAB) Wagner Pina 8' Y, (ARS) Nasser Al-Dawsari 67' Y, (ARS) Firas Al-Buraikan 90+3' Y
 
 ### Sáb 27 jun 2026
 - **partido:** 65 | 00:00 | NZL | BEL | G | CA-02 | DSports
