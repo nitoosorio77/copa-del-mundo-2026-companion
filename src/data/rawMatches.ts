@@ -181,7 +181,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 ### Lun 29 jun 2026
 - **partido:** 74 | 17:30 | 1º Grupo E | 3º (A/B/C/D/F) | 16avos | US-08 | DSports, TyC Sports
 - **partido:** 75 | 22:00 | 1º Grupo F | 2º Grupo C | 16avos | MX-03 | DSports
-- **partido:** 76 | 14:00 | 1º Grupo E | 2º Grupo F | 16avos | US-04 | DSports, TyC Sports
+- **partido:** 76 | 14:00 | 1º Grupo C | 2º Grupo F | 16avos | US-04 | DSports, TyC Sports
 
 ### Mar 30 jun 2026
 - **partido:** 77 | 18:00 | 1º Grupo I | 3º (C/D/F/G/H) | 16avos | US-01 | DSports

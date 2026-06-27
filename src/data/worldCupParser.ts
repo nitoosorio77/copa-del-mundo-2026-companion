@@ -8,6 +8,7 @@ import { RAW_SEDES } from "./rawSedes";
 import { RAW_TEAMS } from "./rawTeams";
 import { RAW_MATCHES } from "./rawMatches";
 import { RAW_PLAYERS } from "./rawPlayers";
+import { resolveKnockoutMatches } from "../utils/knockoutResolver";
 
 // Resolve names of teams for placeholder rosters or stats
 const Surnames = [
@@ -427,6 +428,9 @@ export function parseAllData() {
       teams: groupsTemp[id]
     });
   });
+
+  // Resolve knockout match team IDs from completed group standings
+  resolveKnockoutMatches(teams, groups, matches);
 
   return {
     teams,
