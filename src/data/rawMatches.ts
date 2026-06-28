@@ -169,9 +169,13 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Sáb 27 jun 2026
 - **partido:** 65 | 00:00 | NZL | BEL | G | CA-02 | DSports
+- **resultado:** 65 | 1-5 | GOLES: (BEL) Leandro Trossard 28', (BEL) Leandro Trossard 50', (BEL) Kevin De Bruyne 66', (NZL) Elijah Just 84', (BEL) Romelu Lukaku 86', (BEL) Alexis Saelemaekers 90+4' | CARDS: (NZL) Marko Stamenić 46' Y, (NZL) Elijah Just 56' Y
 - **partido:** 66 | 00:00 | EGI | IRA | G | US-09 | DSports, TyC Sports
+- **resultado:** 66 | 1-1 | GOLES: (EGI) Mahmoud Saber 5', (IRA) Ramin Rezaeian 14' | CARDS: (EGI) Mahmoud Saber 19' Y, (IRA) Hossein Kanaanizadegan 19' Y, (EGI) Yasser Ibrahim 41' Y, (IRA) Ali Nemati 43' Y, (IRA) Saeid Ezatolahi 79' Y, (EGI) Mohanad Lasheen 90+2' Y, (IRA) Hossein Kanaanizadegan 90+4' R, (IRA) Shojae Khalilzadeh 90+4' Y
 - **partido:** 67 | 18:00 | PAN | ING | L | US-01 | DSports, TyC Sports
+- **resultado:** 67 | 0-2 | GOLES: (ING) Jude Bellingham 62', (ING) Harry Kane 67' | CARDS: (PAN) José Fajardo 53' Y, (ING) Jarell Quansah 60' Y, (PAN) Andrés Andrade 83' Y
 - **partido:** 68 | 18:00 | CRO | GHA | L | US-07 | DSports
+- **resultado:** 68 | 2-1 | GOLES: (CRO) Petar Sučić 31', (GHA) Derrick Luckassen 73', (CRO) Nikola Vlašić 83' | CARDS: (CRO) Ivan Perišić 68' Y, (GHA) Kojo Peprah Oppong 90+4' Y
 - **partido:** 69 | 20:30 | COL | POR | K | US-06 | DSports, Disney+
 - **partido:** 70 | 20:30 | RDC | UZB | K | US-05 | DSports, TyC Sports
 - **partido:** 71 | 23:00 | JOR | ARG | J | US-03 | DSports, Telefe, Disney+, TyC Sports, TV Pública
