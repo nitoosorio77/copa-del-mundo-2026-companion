@@ -177,7 +177,9 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 68 | 18:00 | CRO | GHA | L | US-07 | DSports
 - **resultado:** 68 | 2-1 | GOLES: (CRO) Petar Sučić 31', (GHA) Derrick Luckassen 73', (CRO) Nikola Vlašić 83' | CARDS: (CRO) Ivan Perišić 68' Y, (GHA) Kojo Peprah Oppong 90+4' Y
 - **partido:** 69 | 20:30 | COL | POR | K | US-06 | DSports, Disney+
+- **resultado:** 69 | 0-0 | GOLES: Sin goles | CARDS: (COL) Gustavo Puerta 86' Y
 - **partido:** 70 | 20:30 | RDC | UZB | K | US-05 | DSports, TyC Sports
+- **resultado:** 70 | 3-1 | GOLES: (UZB) Eldor Shomurodov 10', (RDC) Yoane Wissa 68' (P), (RDC) Fiston Mayele 78', (RDC) Yoane Wissa 90+1' | CARDS: (RDC) Noah Sadiki 21' Y, (UZB) Abdukodir Khusanov 43' Y, (RDC) Nathanaël Mbuku 45+4' Y, (UZB) Sherzod Nasrullaev 47' Y, (RDC) Samuel Moutoussamy 62' Y
 - **partido:** 71 | 23:00 | JOR | ARG | J | US-03 | DSports, Telefe, Disney+, TyC Sports, TV Pública
 - **partido:** 72 | 23:00 | DZA | AUT | J | US-11 | DSports
 
