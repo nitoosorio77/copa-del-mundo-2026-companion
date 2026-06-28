@@ -181,7 +181,9 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 70 | 20:30 | RDC | UZB | K | US-05 | DSports, TyC Sports
 - **resultado:** 70 | 3-1 | GOLES: (UZB) Eldor Shomurodov 10', (RDC) Yoane Wissa 68' (P), (RDC) Fiston Mayele 78', (RDC) Yoane Wissa 90+1' | CARDS: (RDC) Noah Sadiki 21' Y, (UZB) Abdukodir Khusanov 43' Y, (RDC) Nathanaël Mbuku 45+4' Y, (UZB) Sherzod Nasrullaev 47' Y, (RDC) Samuel Moutoussamy 62' Y
 - **partido:** 71 | 23:00 | JOR | ARG | J | US-03 | DSports, Telefe, Disney+, TyC Sports, TV Pública
+- **resultado:** 71 | 1-3 | GOLES: (ARG) Giovani Lo Celso 19', (ARG) Lautaro Martínez 31' (P), (JOR) Mousa Al-Tamari 55', (ARG) Lionel Messi 80' | CARDS: (JOR) Yazan Al-Arab 5' Y, (JOR) Mohannad Abu Taha 20' Y, (JOR) Yazan Al-Arab 64' R, (JOR) Mohammed Abu Zraiq 90+4' Y
 - **partido:** 72 | 23:00 | DZA | AUT | J | US-11 | DSports
+- **resultado:** 72 | 3-3 | GOLES: (AUT) Marko Arnautovic 28', (DZA) Rafik Belghali 45', (AUT) Marcel Sabitzer 55', (DZA) Riyad Mahrez 60', (DZA) Riyad Mahrez 90+3', (AUT) Sasa Kalajdzic 90+6' | CARDS: (AUT) Marko Arnautovic 11' Y
 
 ## FASE ELIMINATORIA
 
