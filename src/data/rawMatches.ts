@@ -189,11 +189,15 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Dom 28 jun 2026
 - **partido:** 73 | 16:00 | 2º Grupo A | 2º Grupo B | 16avos | US-02 | DSports, TyC Sports
+- **resultado:** 73 | 0-1 | GOLES: (CAN) Stephen Eustáquio 92' | CARDS: (CAN) Natan Sigur 67' Y
 
 ### Lun 29 jun 2026
 - **partido:** 74 | 17:30 | 1º Grupo E | 3º (A/B/C/D/F) | 16avos | US-08 | DSports, TyC Sports
+- **resultado:** 74 | 1-1 | GOLES: (PAR) Julio Enciso 42', (ALE) Kai Havertz 54' | CARDS: (PAR) Andrés Cubas 65' Y
 - **partido:** 75 | 22:00 | 1º Grupo F | 2º Grupo C | 16avos | MX-03 | DSports
+- **resultado:** 75 | 1-1 | GOLES: (HOL) Cody Gakpo 72', (MAR) Issa Diop 90+1' | CARDS: (MAR) Issa Diop 47' Y
 - **partido:** 76 | 14:00 | 1º Grupo C | 2º Grupo F | 16avos | US-04 | DSports, TyC Sports
+- **resultado:** 76 | 2-1 | GOLES: (JAP) Kaishu Sano 29', (BRA) Casemiro 56', (BRA) Gabriel Martinelli 90+5' | CARDS: (JAP) Kaishu Sano 12' Y, (BRA) Casemiro 14' Y, (JAP) Daichi Kamada 45' Y, (BRA) Danilo 48' Y
 
 ### Mar 30 jun 2026
 - **partido:** 77 | 18:00 | 1º Grupo I | 3º (C/D/F/G/H) | 16avos | US-01 | DSports

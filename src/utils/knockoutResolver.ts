@@ -133,14 +133,40 @@ function breakTie(tied: string[], allGroupMatches: Match[]): string[] {
 }
 
 function sortByOverall(teamIds: string[], allGroupMatches: Match[]): string[] {
-  const overall = calcStats(teamIds, allGroupMatches);
+  // Compute each team's stats across ALL their group matches (not just mutual matches).
+  // calcStats() filters to matches where both teams are in teamIds, which would only
+  // count head-to-head results — incorrect for the "overall" tiebreaker criteria.
+  const tiedSet = new Set(teamIds);
+  const overall = new Map<string, GroupStats>();
+  for (const id of teamIds) {
+    overall.set(id, { teamId: id, points: 0, gd: 0, gf: 0, fairPlay: 0 });
+  }
+  for (const m of allGroupMatches) {
+    if (!m.result) continue;
+    const lg = m.result.localGoals;
+    const vg = m.result.visitorGoals;
+    if (tiedSet.has(m.localId)) {
+      const s = overall.get(m.localId)!;
+      s.gf += lg; s.gd += lg - vg;
+      if (lg > vg) s.points += 3; else if (lg === vg) s.points += 1;
+    }
+    if (tiedSet.has(m.visitorId)) {
+      const s = overall.get(m.visitorId)!;
+      s.gf += vg; s.gd += vg - lg;
+      if (vg > lg) s.points += 3; else if (vg === lg) s.points += 1;
+    }
+    for (const card of m.result.cards) {
+      const s = overall.get(card.teamId);
+      if (s) s.fairPlay += card.type === "yellow" ? 1 : 3;
+    }
+  }
   return [...teamIds].sort((a, b) => {
     const sa = overall.get(a)!;
     const sb = overall.get(b)!;
     if (sb.gd !== sa.gd) return sb.gd - sa.gd;
     if (sb.gf !== sa.gf) return sb.gf - sa.gf;
     if (sa.fairPlay !== sb.fairPlay) return sa.fairPlay - sb.fairPlay;
-    return a.localeCompare(b); // alphabetical proxy for FIFA ranking
+    return a.localeCompare(b);
   });
 }
 
