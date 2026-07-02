@@ -201,8 +201,11 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mar 30 jun 2026
 - **partido:** 77 | 18:00 | 1º Grupo I | 3º (C/D/F/G/H) | 16avos | US-01 | DSports
+- **resultado:** 77 | 3-0 | GOLES: (FRA) Kylian Mbappé 45', (FRA) Bradley Barcola 53', (FRA) Kylian Mbappé 74' | CARDS: Sin tarjetas registradas
 - **partido:** 78 | 14:00 | 2º Grupo E | 2º Grupo I | 16avos | US-03 | DSports, TyC Sports
+- **resultado:** 78 | 1-2 | GOLES: (NOR) Antonio Nusa 39', (CIV) Amad Diallo 74', (NOR) Erling Haaland 86' | CARDS: Sin tarjetas registradas
 - **partido:** 79 | 22:00 | 1º Grupo A | 3º (C/E/F/H/I) | 16avos | MX-01 | DSports
+- **resultado:** 79 | 2-0 | GOLES: (MEX) Julián Quiñones 22', (MEX) Raúl Jiménez 31' | CARDS: Sin tarjetas registradas
 
 ### Mié 01 jul 2026
 - **partido:** 80 | 13:00 | 1º Grupo L | 3º (E/H/I/J/K) | 16avos | US-05 | DSports

@@ -191,10 +191,23 @@ function rankGroup(teamIds: string[], groupMatches: Match[]): string[] {
 
 // --- THIRD-PLACE ASSIGNMENT (BIPARTITE MATCHING) ---
 
+// FIFA's real Annex C table (competition regulations) is a hand-published, non-formulaic
+// lookup of all 495 possible 8-of-12 qualifying combinations to specific match slots — it
+// exists precisely to avoid group-mates rematching early and to balance travel, so it can't
+// be reconstructed from a generic algorithm. We can't embed all 495 rows without a verified
+// source, so we hardcode the one combination confirmed against real results (FIFA/ESPN) and
+// fall back to the heuristic solver — which may not match Annex C — for any other combination.
+const KNOWN_ANNEX_C_COMBINATIONS: Record<string, Record<number, string>> = {
+  "B,D,E,F,I,J,K,L": { 74: "D", 77: "F", 79: "E", 80: "K", 81: "B", 82: "I", 85: "J", 87: "L" },
+};
+
 // Given the 8 qualifying groups (sorted best→worst), find which group fills each slot.
 // Uses backtracking with most-constrained-first heuristic.
 // For ambiguous cases, tries groups in rank order (best qualifying 3rd first).
 function assignThirdPlaceSlots(qualifyingGroups: string[]): Map<number, string> {
+  const known = KNOWN_ANNEX_C_COMBINATIONS[[...qualifyingGroups].sort().join(",")];
+  if (known) return new Map(Object.entries(known).map(([matchId, g]) => [Number(matchId), g]));
+
   const result = new Map<number, string>();
   const remaining = new Set(qualifyingGroups);
 
