@@ -209,8 +209,11 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mié 01 jul 2026
 - **partido:** 80 | 13:00 | 1º Grupo L | 3º (E/H/I/J/K) | 16avos | US-05 | DSports
+- **resultado:** 80 | 2-1 | GOLES: (RDC) Brian Cipenga 7', (ING) Harry Kane 75', (ING) Harry Kane 86' | CARDS: (ING) Jude Bellingham 20' Y
 - **partido:** 81 | 21:00 | 1º Grupo D | 3º (B/E/F/I/J) | 16avos | US-10 | DSports
+- **resultado:** 81 | 2-0 | GOLES: (USA) Folarin Balogun 45', (USA) Malik Tillman 82' | CARDS: (USA) Folarin Balogun 61' R
 - **partido:** 82 | 17:00 | 1º Grupo G | 3º (A/E/H/I/J) | 16avos | US-09 | DSports
+- **resultado:** 82 | 3-2 | GOLES: (SEN) Habib Diarra 24', (SEN) Ismaila Sarr 51', (BEL) Romelu Lukaku 86', (BEL) Youri Tielemans 89', (BEL) Youri Tielemans 125' (P) | CARDS: Sin tarjetas registradas
 
 ### Jue 02 jul 2026
 - **partido:** 83 | 20:00 | 2º Grupo K | 2º Grupo L | 16avos | CA-01 | DSports
