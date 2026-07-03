@@ -217,10 +217,13 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Jue 02 jul 2026
 - **partido:** 83 | 20:00 | 2º Grupo K | 2º Grupo L | 16avos | CA-01 | DSports
+- **resultado:** 83 | 2-1 | GOLES: (CRO) Ivan Perišić 53', (POR) Cristiano Ronaldo 68' (P), (POR) Gonçalo Ramos 94' | CARDS: Sin tarjetas registradas
 - **partido:** 84 | 16:00 | 1º Grupo H | 2º Grupo J | 16avos | US-02 | DSports, TyC Sports
+- **resultado:** 84 | 3-0 | GOLES: (ESP) Mikel Oyarzabal 36', (ESP) Pedro Porro 66', (ESP) Mikel Oyarzabal 89' | CARDS: Sin tarjetas registradas
 
 ### Vie 03 jul 2026
 - **partido:** 85 | 00:00 | 1º Grupo B | 3º (E/F/G/I/J) | 16avos | CA-02 | DSports
+- **resultado:** 85 | 1-0 | GOLES: (SUI) Breel Embolo 10' | CARDS: Sin tarjetas registradas
 - **partido:** 86 | 19:00 | 1º Grupo J | 2º Grupo H | 16avos | US-06 | DSports
 - **partido:** 87 | 22:30 | 1º Grupo K | 3º (D/E/I/J/L) | 16avos | US-11 | DSports
 - **partido:** 88 | 15:00 | 2º Grupo D | 2º Grupo G | 16avos | US-03 | DSports, TyC Sports
