@@ -225,24 +225,27 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 85 | 00:00 | 1º Grupo B | 3º (E/F/G/I/J) | 16avos | CA-02 | DSports
 - **resultado:** 85 | 1-0 | GOLES: (SUI) Breel Embolo 10' | CARDS: Sin tarjetas registradas
 - **partido:** 86 | 19:00 | 1º Grupo J | 2º Grupo H | 16avos | US-06 | DSports
+- **resultado:** 86 | 3-2 | GOLES: (ARG) Lionel Messi 29', (CAB) Deroy Duarte 59', (ARG) Lisandro Martínez 92', (CAB) Sidny Lopes Cabral 103', (CAB) Diney Borges 111' (EC) | CARDS: Sin tarjetas registradas
 - **partido:** 87 | 22:30 | 1º Grupo K | 3º (D/E/I/J/L) | 16avos | US-11 | DSports
+- **resultado:** 87 | 1-0 | GOLES: (COL) Jhon Arias 14' | CARDS: Sin tarjetas registradas
 - **partido:** 88 | 15:00 | 2º Grupo D | 2º Grupo G | 16avos | US-03 | DSports, TyC Sports
+- **resultado:** 88 | 1-1 | GOLES: (EGI) Emam Ashour 13', (EGI) Mohamed Hany 55' (EC) | CARDS: (EGI) Haissem Hassan 105' Y
 
 ### Sáb 04 jul 2026
-- **partido:** 89 | 18:00 | Ganador 73 | Ganador 77 | Octavos | US-07 | DSports, TyC Sports
-- **partido:** 90 | 14:00 | Ganador 74 | Ganador 75 | Octavos | US-04 | DSports, TyC Sports
+- **partido:** 89 | 18:00 | CAN | FRA | Octavos | US-07 | DSports, TyC Sports
+- **partido:** 90 | 14:00 | PAR | MAR | Octavos | US-04 | DSports, TyC Sports
 
 ### Dom 05 jul 2026
-- **partido:** 91 | 17:00 | Ganador 76 | Ganador 78 | Octavos | US-01 | DSports, TyC Sports
-- **partido:** 92 | 21:00 | Ganador 79 | Ganador 80 | Octavos | MX-01 | DSports, TyC Sports
+- **partido:** 91 | 17:00 | BRA | NOR | Octavos | US-01 | DSports, TyC Sports
+- **partido:** 92 | 21:00 | MEX | ING | Octavos | MX-01 | DSports, TyC Sports
 
 ### Lun 06 jul 2026
-- **partido:** 93 | 16:00 | Ganador 83 | Ganador 84 | Octavos | US-03 | DSports, TyC Sports
-- **partido:** 94 | 21:00 | Ganador 81 | Ganador 82 | Octavos | US-09 | DSports, TyC Sports
+- **partido:** 93 | 16:00 | POR | ESP | Octavos | US-03 | DSports, TyC Sports
+- **partido:** 94 | 21:00 | USA | BEL | Octavos | US-09 | DSports, TyC Sports
 
 ### Mar 07 jul 2026
-- **partido:** 95 | 13:00 | Ganador 86 | Ganador 88 | Octavos | US-05 | DSports, TyC Sports
-- **partido:** 96 | 17:00 | Ganador 85 | Ganador 87 | Octavos | CA-02 | DSports, TyC Sports
+- **partido:** 95 | 13:00 | ARG | EGI | Octavos | US-05 | DSports, TyC Sports
+- **partido:** 96 | 17:00 | SUI | COL | Octavos | CA-02 | DSports, TyC Sports
 
 ### Jue 09 jul 2026
 - **partido:** 97 | 17:00 | Ganador 89 | Ganador 90 | Cuartos | US-08 | DSports, TyC Sports
