@@ -232,12 +232,16 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **resultado:** 88 | 1-1 | GOLES: (EGI) Emam Ashour 13', (EGI) Mohamed Hany 55' (EC) | CARDS: (EGI) Haissem Hassan 105' Y
 
 ### Sáb 04 jul 2026
-- **partido:** 89 | 18:00 | CAN | FRA | Octavos | US-07 | DSports, TyC Sports
-- **partido:** 90 | 14:00 | PAR | MAR | Octavos | US-04 | DSports, TyC Sports
+- **partido:** 89 | 18:00 | CAN | MAR | Octavos | US-07 | DSports, TyC Sports
+- **resultado:** 89 | 0-3 | GOLES: (MAR) Azzedine Ounahi 53', (MAR) Azzedine Ounahi 82', (MAR) Soufiane Rahimi 90+8' | CARDS: Sin tarjetas registradas
+- **partido:** 90 | 14:00 | PAR | FRA | Octavos | US-04 | DSports, TyC Sports
+- **resultado:** 90 | 0-1 | GOLES: (FRA) Kylian Mbappé 70' (P) | CARDS: (FRA) Michael Olise 90+7' Y
 
 ### Dom 05 jul 2026
 - **partido:** 91 | 17:00 | BRA | NOR | Octavos | US-01 | DSports, TyC Sports
+- **resultado:** 91 | 1-2 | GOLES: (NOR) Erling Haaland 79', (NOR) Erling Haaland 90', (BRA) Neymar 90+10' (P) | CARDS: Sin tarjetas registradas
 - **partido:** 92 | 21:00 | MEX | ING | Octavos | MX-01 | DSports, TyC Sports
+- **resultado:** 92 | 2-3 | GOLES: (ING) Jude Bellingham 36', (ING) Jude Bellingham 38', (MEX) Julián Quiñones 42', (ING) Harry Kane 60' (P), (MEX) Raúl Jiménez 69' (P) | CARDS: (ING) Jarell Quansah 54' R, (MEX) Johan Vásquez 90+8' Y, (ING) Jordan Henderson 90+8' Y
 
 ### Lun 06 jul 2026
 - **partido:** 93 | 16:00 | POR | ESP | Octavos | US-03 | DSports, TyC Sports
@@ -248,13 +252,13 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 96 | 17:00 | SUI | COL | Octavos | CA-02 | DSports, TyC Sports
 
 ### Jue 09 jul 2026
-- **partido:** 97 | 17:00 | Ganador 89 | Ganador 90 | Cuartos | US-08 | DSports, TyC Sports
+- **partido:** 97 | 17:00 | MAR | FRA | Cuartos | US-08 | DSports, TyC Sports
 
 ### Vie 10 jul 2026
 - **partido:** 98 | 16:00 | Ganador 93 | Ganador 94 | Cuartos | US-02 | DSports, TyC Sports
 
 ### Sáb 11 jul 2026
-- **partido:** 99 | 18:00 | Ganador 91 | Ganador 92 | Cuartos | US-06 | DSports, TyC Sports
+- **partido:** 99 | 18:00 | NOR | ING | Cuartos | US-06 | DSports, TyC Sports
 - **partido:** 100 | 22:00 | Ganador 95 | Ganador 96 | Cuartos | US-11 | DSports, TyC Sports
 
 ### Mar 14 jul 2026
