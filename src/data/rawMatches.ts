@@ -245,7 +245,9 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Lun 06 jul 2026
 - **partido:** 93 | 16:00 | POR | ESP | Octavos | US-03 | DSports, TyC Sports
+- **resultado:** 93 | 0-1 | GOLES: (ESP) Mikel Merino 90+1' | CARDS: (ESP) Ferran Torres 90+8' Y
 - **partido:** 94 | 21:00 | USA | BEL | Octavos | US-09 | DSports, TyC Sports
+- **resultado:** 94 | 1-4 | GOLES: (BEL) Charles De Ketelaere 9', (USA) Malik Tillman 31', (BEL) Charles De Ketelaere 33', (BEL) Hans Vanaken 57', (BEL) Romelu Lukaku 90+3' | CARDS: Sin tarjetas registradas
 
 ### Mar 07 jul 2026
 - **partido:** 95 | 13:00 | ARG | EGI | Octavos | US-05 | DSports, TyC Sports
@@ -255,7 +257,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 - **partido:** 97 | 17:00 | MAR | FRA | Cuartos | US-08 | DSports, TyC Sports
 
 ### Vie 10 jul 2026
-- **partido:** 98 | 16:00 | Ganador 93 | Ganador 94 | Cuartos | US-02 | DSports, TyC Sports
+- **partido:** 98 | 16:00 | ESP | BEL | Cuartos | US-02 | DSports, TyC Sports
 
 ### Sáb 11 jul 2026
 - **partido:** 99 | 18:00 | NOR | ING | Cuartos | US-06 | DSports, TyC Sports
