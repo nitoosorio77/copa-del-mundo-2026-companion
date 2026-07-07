@@ -251,7 +251,9 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Mar 07 jul 2026
 - **partido:** 95 | 13:00 | ARG | EGI | Octavos | US-05 | DSports, TyC Sports
+- **resultado:** 95 | 3-2 | GOLES: (EGI) Yasser Ibrahim 15', (EGI) Mostafa Zico 67', (ARG) Cristian Romero 79', (ARG) Lionel Messi 83', (ARG) Enzo Fernández 90+2' | CARDS: (EGI) Marawan Attia 90+8' Y, (EGI) Haissem Hassan 90+12' Y
 - **partido:** 96 | 17:00 | SUI | COL | Octavos | CA-02 | DSports, TyC Sports
+- **resultado:** 96 | 0-0 | GOLES: Sin goles | CARDS: Sin tarjetas registradas
 
 ### Jue 09 jul 2026
 - **partido:** 97 | 17:00 | MAR | FRA | Cuartos | US-08 | DSports, TyC Sports
@@ -261,7 +263,7 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Sáb 11 jul 2026
 - **partido:** 99 | 18:00 | NOR | ING | Cuartos | US-06 | DSports, TyC Sports
-- **partido:** 100 | 22:00 | Ganador 95 | Ganador 96 | Cuartos | US-11 | DSports, TyC Sports
+- **partido:** 100 | 22:00 | ARG | SUI | Cuartos | US-11 | DSports, TyC Sports
 
 ### Mar 14 jul 2026
 - **partido:** 101 | 16:00 | Ganador 97 | Ganador 98 | Semifinales | US-03 | DSports, TyC Sports, Disney+, TV Pública
