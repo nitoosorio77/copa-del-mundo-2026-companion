@@ -257,16 +257,18 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Jue 09 jul 2026
 - **partido:** 97 | 17:00 | MAR | FRA | Cuartos | US-08 | DSports, TyC Sports
+- **resultado:** 97 | 0-2 | GOLES: (FRA) Kylian Mbappé 60', (FRA) Ousmane Dembélé 66' | CARDS: Sin tarjetas registradas
 
 ### Vie 10 jul 2026
 - **partido:** 98 | 16:00 | ESP | BEL | Cuartos | US-02 | DSports, TyC Sports
+- **resultado:** 98 | 2-1 | GOLES: (ESP) Fabián Ruiz 30', (BEL) Charles De Ketelaere 41', (ESP) Mikel Merino 88' | CARDS: (ESP) Aymeric Laporte 90+3' Y, (BEL) Axel Witsel 90+5' Y
 
 ### Sáb 11 jul 2026
 - **partido:** 99 | 18:00 | NOR | ING | Cuartos | US-06 | DSports, TyC Sports
 - **partido:** 100 | 22:00 | ARG | SUI | Cuartos | US-11 | DSports, TyC Sports
 
 ### Mar 14 jul 2026
-- **partido:** 101 | 16:00 | Ganador 97 | Ganador 98 | Semifinales | US-03 | DSports, TyC Sports, Disney+, TV Pública
+- **partido:** 101 | 16:00 | FRA | ESP | Semifinales | US-03 | DSports, TyC Sports, Disney+, TV Pública
 
 ### Mié 15 jul 2026
 - **partido:** 102 | 16:00 | Ganador 99 | Ganador 100 | Semifinales | US-05 | DSports, TyC Sports, Disney+, TV Pública
