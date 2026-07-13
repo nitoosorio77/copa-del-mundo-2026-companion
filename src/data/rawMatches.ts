@@ -265,13 +265,15 @@ export const RAW_MATCHES = `# Fixture — Mundial 2026
 
 ### Sáb 11 jul 2026
 - **partido:** 99 | 18:00 | NOR | ING | Cuartos | US-06 | DSports, TyC Sports
+- **resultado:** 99 | 1-2 | GOLES: (NOR) Andreas Schjelderup 36', (ING) Jude Bellingham 45+2', (ING) Jude Bellingham 93' | CARDS: (NOR) Kristoffer Ajer 117' Y
 - **partido:** 100 | 22:00 | ARG | SUI | Cuartos | US-11 | DSports, TyC Sports
+- **resultado:** 100 | 3-1 | GOLES: (ARG) Alexis Mac Allister 10', (SUI) Dan Ndoye 67', (ARG) Julián Álvarez 112', (ARG) Lautaro Martínez 120+1' | CARDS: (SUI) Breel Embolo 72' R
 
 ### Mar 14 jul 2026
 - **partido:** 101 | 16:00 | FRA | ESP | Semifinales | US-03 | DSports, TyC Sports, Disney+, TV Pública
 
 ### Mié 15 jul 2026
-- **partido:** 102 | 16:00 | Ganador 99 | Ganador 100 | Semifinales | US-05 | DSports, TyC Sports, Disney+, TV Pública
+- **partido:** 102 | 16:00 | ING | ARG | Semifinales | US-05 | DSports, TyC Sports, Disney+, TV Pública
 
 ### Sáb 18 jul 2026
 - **partido:** 103 | 18:00 | Perdedor 101 | Perdedor 102 | Tercer puesto | US-06 | DSports, TyC Sports
